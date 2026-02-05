@@ -5,24 +5,21 @@ import { GiftIcon } from "@/components/icons";
 export const metadata: Metadata = {
   title: "Gift Cards",
   description:
-    "Prepaid corporate gifting for recognition, festivals, and performance rewards.",
+    "Reward great work with Swiggy Gift Cards and enterprise-grade distribution.",
 };
 
 const useCases = [
   {
-    title: "Employee recognition",
-    detail:
-      "Celebrate milestones, anniversaries, and achievements with instant gifting.",
+    title: "Rewards",
+    detail: "Recognize high-impact teams with instant Swiggy Gift Cards.",
   },
   {
-    title: "Festive gifting",
-    detail:
-      "Scale Diwali, Eid, and year-end gifting with guaranteed delivery timelines.",
+    title: "Birthdays",
+    detail: "Celebrate milestones and moments with easy distribution.",
   },
   {
-    title: "Performance rewards",
-    detail:
-      "Drive motivation with tiered gift cards aligned to performance outcomes.",
+    title: "Allowances",
+    detail: "Offer flexible meal allowances with prepaid cards.",
   },
 ];
 
@@ -58,12 +55,11 @@ export default function GiftCardsPage() {
               Gift Cards
             </p>
             <h1 className="text-4xl font-semibold text-ink sm:text-5xl">
-              Prepaid gifting that feels premium and effortless
+              Reward great work with Swiggy Gift Cards
             </h1>
             <p className="text-lg text-slate-700">
-              Swiggy for Work gift cards help teams celebrate wins, reward
-              performance, and keep festive gifting on schedule—all with
-              enterprise-grade controls.
+              Instant, hassle-free gifting for rewards, birthdays, and
+              allowances, backed by enterprise-grade controls.
             </p>
             <div className="flex flex-wrap gap-3 text-sm text-slate-500">
               <span className="rounded-full border border-black/10 px-4 py-2">
@@ -116,6 +112,28 @@ export default function GiftCardsPage() {
               <p className="mt-3 text-sm text-slate-500">{item.detail}</p>
             </div>
           ))}
+        </div>
+
+        <div className="rounded-3xl border border-black/5 bg-white p-6 shadow-card">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+            Why choose Swiggy Gift Cards?
+          </p>
+          <ul className="mt-4 grid gap-3 text-sm text-slate-500 sm:grid-cols-2">
+            {[
+              "Attractive bulk discounts",
+              "Pan-India acceptance",
+              "Use across Food, Dineout and Instamart",
+              "Instant, hassle-free distribution",
+              "Flexible denominations",
+            ].map((item) => (
+              <li
+                key={item}
+                className="rounded-2xl border border-black/5 bg-surface-muted px-4 py-3"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[1fr_1.1fr]">

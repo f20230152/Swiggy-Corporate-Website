@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const footerLinks = [
@@ -13,10 +14,13 @@ export default function SiteFooter() {
       <div className="mx-auto w-full max-w-6xl px-6 py-12">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div className="space-y-4">
-            <div className="flex items-center gap-2 text-lg font-semibold text-ink">
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand text-sm font-bold text-white">
-                S
-              </span>
+            <div className="flex items-center gap-3 text-lg font-semibold text-ink">
+              <Image
+                src="/swiggy-logo.png"
+                alt="Swiggy"
+                width={36}
+                height={36}
+              />
               <span className="font-heading tracking-tight">
                 Swiggy for Work
               </span>
@@ -28,7 +32,6 @@ export default function SiteFooter() {
             <div className="text-sm text-slate-500">
               <p>Corporate HQ: Bengaluru, India</p>
               <p>Email: swiggyforwork@swiggy.in</p>
-              <p>Phone: +91 80 0000 0000</p>
             </div>
           </div>
           <div className="space-y-3 text-sm">

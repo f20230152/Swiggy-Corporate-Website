@@ -18,42 +18,45 @@ const useCases = [
 
 const highlights = [
   {
-    title: "One call, one point of contact",
+    title: "Reliable execution at scale",
     detail:
-      "Dedicated concierge team plans every detail with your office manager or HR lead.",
+      "From team lunches to town halls, every request is managed end to end.",
   },
   {
-    title: "End-to-end execution",
+    title: "Single point of coordination",
     detail:
-      "Menu planning, vendor coordination, delivery tracking, and on-ground support.",
+      "One call to the concierge team with zero follow-ups across vendors.",
   },
   {
-    title: "Restaurant booking + logistics",
+    title: "Curated restaurants and caterers",
     detail:
-      "Secure dine-in reservations, transport, and dietary accommodations in one workflow.",
+      "Options tailored to budget, dietary needs, and location preferences.",
   },
+];
+
+const paymentOptions = [
+  "Pre-paid after option locking",
+  "Pay on delivery via secure payment link",
+  "Open PO with monthly consolidated billing",
+  "Request-level PO at order confirmation",
 ];
 
 const flow = [
   {
-    title: "Share the requirement",
-    detail:
-      "Tell us the headcount, dietary preferences, location, and timelines.",
+    title: "Share requirements",
+    detail: "Headcount, dietary preferences, location, and timelines.",
   },
   {
-    title: "We curate the experience",
-    detail:
-      "Menus, vendor selection, and logistics are aligned with your budget and policy.",
+    title: "Get suitable options",
+    detail: "Concierge returns 3-5 curated options with pricing.",
   },
   {
-    title: "Concierge executes",
-    detail:
-      "On-ground coordination, delivery assurance, and real-time communication.",
+    title: "Confirm option and pay",
+    detail: "Lock the option and select the payment method.",
   },
   {
-    title: "Post-event reporting",
-    detail:
-      "Single invoice with attendee insights and cost center tagging.",
+    title: "Enjoy a seamless experience",
+    detail: "On-ground coordination with real-time updates.",
   },
 ];
 
@@ -104,7 +107,7 @@ export default function ConciergeLedFoodDiningPage() {
               <p className="font-semibold text-ink">Typical use cases</p>
               <ul className="space-y-2">
                 {useCases.slice(0, 3).map((useCase) => (
-                  <li key={useCase}>• {useCase}</li>
+                  <li key={useCase}>- {useCase}</li>
                 ))}
               </ul>
             </div>
@@ -121,6 +124,23 @@ export default function ConciergeLedFoodDiningPage() {
               <p className="mt-3 text-sm text-slate-500">{item.detail}</p>
             </div>
           ))}
+
+        <div className="rounded-3xl border border-black/5 bg-white p-6 shadow-card">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+            Flexible payment options
+          </p>
+          <ul className="mt-4 grid gap-3 text-sm text-slate-500 sm:grid-cols-2">
+            {paymentOptions.map((option) => (
+              <li
+                key={option}
+                className="rounded-2xl border border-black/5 bg-surface-muted px-4 py-3"
+              >
+                {option}
+              </li>
+            ))}
+          </ul>
+        </div>
+
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[1fr_1.1fr]">

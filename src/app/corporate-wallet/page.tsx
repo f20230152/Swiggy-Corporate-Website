@@ -10,54 +10,78 @@ export const metadata: Metadata = {
 
 const platformBlocks = [
   {
-    title: "One Unified Platform",
+    title: "No out-of-pocket spends",
     bullets: [
-      "Flights, hotels, cabs, trains, meals",
-      "Corporate fares",
-      "Policy controls",
-      "100% GST-compliant invoices",
+      "Reimbursements eliminated",
+      "No bills, submissions, or follow-ups",
+      "Corporate payment at checkout",
     ],
   },
   {
-    title: "Zero Reimbursements",
+    title: "Single monthly invoice",
     bullets: [
-      "Orders via official ID",
-      "Project / cost-code tagging",
-      "Direct ERP posting",
-      "No receipts, claims, or approvals",
+      "Simpler invoicing and audit trail",
+      "Budget control with real-time visibility",
+      "Lower admin ops for finance teams",
     ],
   },
   {
-    title: "Finance-Ready Reconciliation",
+    title: "Simplified compliance",
     bullets: [
-      "Real-time dashboards",
-      "ERP-ready reports",
-      "GSTR-2B support",
-      "Invoice traceability",
+      "GST billing issues resolved",
+      "Centralized reporting and invoices",
+      "Policy-led spend limits by employee group",
+    ],
+  },
+];
+
+const useCases = [
+  "Dining out at restaurants",
+  "Food ordering in office",
+  "Meals at hotels while travelling",
+  "Late night meals at office",
+  "Team dinners at restaurants",
+  "Client and team meetings",
+  "Hiring drives and trainings",
+  "Celebrations and town halls",
+];
+
+const audienceBenefits = [
+  {
+    title: "Employees",
+    bullets: [
+      "No reimbursement friction",
+      "Stress-free experience while travelling",
+      "Corporate limits visible at checkout",
+    ],
+  },
+  {
+    title: "HR / Admin",
+    bullets: [
+      "Single monthly invoice",
+      "Centralized spend visibility",
+      "Reduced credit card administration",
     ],
   },
 ];
 
 const flow = [
   {
-    title: "Policy setup",
-    detail:
-      "Configure wallet limits, cost centers, and GST rules aligned with your finance team.",
+    title: "Employees log in via corporate email",
+    detail: "Swiggy for Work access is enabled with verified official IDs.",
   },
   {
-    title: "Employees order",
-    detail:
-      "Meals and travel dining are booked through official IDs with automated approvals.",
+    title: "Choose Corporate Payment",
+    detail: "Employees add items to cart and select Corporate Payment at checkout.",
   },
   {
-    title: "Concierge monitors",
-    detail:
-      "Swiggy for Work ensures policy compliance and handles vendor coordination.",
+    title: "Dineout: Bill to company",
+    detail: "For dining out, employees select Bill to Company and attach the bill.",
   },
   {
-    title: "Finance closes the loop",
+    title: "Admin visibility & reports",
     detail:
-      "ERP-ready exports with GSTR-2B mapping and auditable invoice trails.",
+      "Policy setup, wallet usage reports, and invoices are centralized for finance.",
   },
 ];
 
@@ -74,9 +98,10 @@ export default function CorporateWalletPage() {
               Corporate Wallet
             </h1>
             <p className="text-lg text-slate-700">
-              Employees incur out-of-pocket expenses for meals during client
-              meetings, team engagements, or business travel, followed by manual
-              reimbursements. Swiggy for Work digitizes the entire workflow.
+              Eliminating reimbursements, enhancing efficiency. Transform how
+              your organization manages employee meal benefits with a
+              streamlined, digital-first solution that saves time and reduces
+              administrative effort.
             </p>
             <div className="flex flex-wrap gap-3 text-sm text-slate-500">
               <span className="rounded-full border border-black/10 px-4 py-2">
@@ -115,26 +140,19 @@ export default function CorporateWalletPage() {
           </div>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-2">
-          <div className="rounded-3xl border border-black/5 bg-white p-6 shadow-card">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
-              Problem statement
-            </p>
-            <p className="mt-4 text-base text-slate-700">
-              Employees incur out-of-pocket expenses for meals during client
-              meetings, team engagements, or business travel, followed by manual
-              reimbursements.
-            </p>
-          </div>
-          <div className="rounded-3xl border border-black/5 bg-white p-6 shadow-card">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
-              Solution
-            </p>
-            <p className="mt-4 text-base text-slate-700">
-              Swiggy for Work digitizes the entire workflow, connecting meal
-              orders with policy controls, approvals, and finance-ready
-              reporting.
-            </p>
+        <div className="rounded-3xl border border-black/5 bg-white p-6 shadow-card">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+            Use cases
+          </p>
+          <div className="mt-4 grid gap-3 text-sm text-slate-500 sm:grid-cols-2">
+            {useCases.map((useCase) => (
+              <div
+                key={useCase}
+                className="rounded-2xl border border-black/5 bg-surface-muted px-4 py-3"
+              >
+                {useCase}
+              </div>
+            ))}
           </div>
         </div>
 
@@ -147,7 +165,26 @@ export default function CorporateWalletPage() {
               <h2 className="text-xl font-semibold text-ink">{block.title}</h2>
               <ul className="mt-4 space-y-2 text-sm text-slate-500">
                 {block.bullets.map((bullet) => (
-                  <li key={bullet}>• {bullet}</li>
+                  <li key={bullet}>- {bullet}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+
+        <div className="grid gap-6 lg:grid-cols-2">
+          {audienceBenefits.map((group) => (
+            <div
+              key={group.title}
+              className="rounded-3xl border border-black/5 bg-white p-6 shadow-card"
+            >
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+                {group.title}
+              </p>
+              <ul className="mt-4 space-y-2 text-sm text-slate-500">
+                {group.bullets.map((bullet) => (
+                  <li key={bullet}>- {bullet}</li>
                 ))}
               </ul>
             </div>
@@ -160,11 +197,11 @@ export default function CorporateWalletPage() {
               How it works
             </p>
             <h2 className="mt-4 text-2xl font-semibold text-ink">
-              Streamlined approval to ERP posting
+              Corporate payments in four steps
             </h2>
             <p className="mt-3 text-sm text-slate-500">
-              From policy setup to reconciliation, every step is automated so HR
-              and Finance stay aligned.
+              From employee login to finance reporting, everything stays within
+              policy.
             </p>
           </div>
           <div className="space-y-4">

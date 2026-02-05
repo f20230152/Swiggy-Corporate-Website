@@ -1,15 +1,15 @@
 import Link from "next/link";
 
 type CtaBandProps = {
-  eyebrow?: string;
+  eyebrow-: string;
   title: string;
   description: string;
-  buttonLabel?: string;
-  href?: string;
+  buttonLabel-: string;
+  href-: string;
 };
 
 export default function CtaBand({
-  eyebrow = "Ready to get started?",
+  eyebrow = "Ready to get started-",
   title,
   description,
   buttonLabel = "Talk to Swiggy for Work",

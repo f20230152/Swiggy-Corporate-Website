@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import {
@@ -11,27 +12,29 @@ import {
 const solutions = [
   {
     title: "Corporate Wallet",
-    description: "Digitize meals and travel expenses with policy-led controls.",
+    description:
+      "Eliminate reimbursements with a digital-first corporate payment solution.",
     href: "/corporate-wallet",
     icon: WalletIcon,
   },
   {
     title: "Corporate Rewards",
-    description: "Reward verified employees with premium Swiggy experiences.",
+    description:
+      "Onboard your company so employees can access exclusive Swiggy offers.",
     href: "/corporate-rewards",
     icon: RewardsIcon,
   },
   {
-    title: "Concierge-Led Food & Dining",
-    description: "Single-point execution for every team meal and event.",
-    href: "/concierge-led-food-dining",
-    icon: ConciergeIcon,
-  },
-  {
     title: "Gift Cards",
-    description: "Prepaid solutions for recognition, festivals, and bonuses.",
+    description: "Reward great work with Swiggy Gift Cards.",
     href: "/gift-cards",
     icon: GiftIcon,
+  },
+  {
+    title: "Concierge-Led Food & Dining",
+    description: "Single point of contact for bulk orders and dining events.",
+    href: "/concierge-led-food-dining",
+    icon: ConciergeIcon,
   },
 ];
 
@@ -56,21 +59,27 @@ const whySwiggy = [
 const testimonials = [
   {
     quote:
-      "Swiggy for Work moved our monthly team lunches to a single workflow. Billing and GST reconciliation now takes minutes.",
-    name: "Priya Menon",
-    role: "Head of People Operations, FinTech Unicorn",
+      "The main issue for me was the anxiety around credit card bill dues because of the reimbursement process. That's gone now.",
+    name: "Jay",
+    role: "Sr. Business Development Manager, MakeMyTrip",
   },
   {
     quote:
-      "Their concierge team handled our 500-person quarterly meet with zero follow-up. One call, everything delivered.",
-    name: "Arjun Rao",
-    role: "Admin Lead, SaaS Scale-up",
+      "Getting a proper GST bill in a small town used to be impossible. Now, it's all handled in the app.",
+    name: "Piyush",
+    role: "Business Development Manager, MakeMyTrip",
   },
   {
     quote:
-      "We moved to corporate rewards for top-performers. Usage is high and the experience is far more premium.",
-    name: "Deepa Nair",
-    role: "HR Business Partner, Enterprise IT",
+      "Tracking invoices every month was a mess. Now, it's one single monthly invoice - faster and smoother.",
+    name: "Ajay",
+    role: "Admin, KFintech",
+  },
+  {
+    quote:
+      "When we order food for small office events, seeing the monthly limit right at checkout helps a lot.",
+    name: "Admin",
+    role: "WeWork",
   },
 ];
 
@@ -107,11 +116,11 @@ export default function Home() {
                 Swiggy for Work
               </p>
               <h1 className="text-4xl font-semibold leading-tight text-ink sm:text-5xl">
-                Simplify employee meals, team events, and celebrations.
+                Unparalleled convenience for workplace food.
               </h1>
               <p className="text-lg text-slate-700">
-                Comprehensive food delivery and dining solutions designed to
-                simplify team meals, celebrations, and corporate events.
+                Simplify food for every workplace event, from team lunches to
+                celebrations and offsites.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link
@@ -127,79 +136,21 @@ export default function Home() {
                   Explore Solutions
                 </Link>
               </div>
-              <div className="flex flex-wrap gap-6 text-sm text-slate-500">
-                <div>
-                  <p className="text-2xl font-semibold text-ink">10K+</p>
-                  <p>Corporate partners</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-semibold text-ink">1M+</p>
-                  <p>Orders managed annually</p>
-                </div>
-                <div>
-                  <p className="text-2xl font-semibold text-ink">24/7</p>
-                  <p>Concierge support</p>
-                </div>
-              </div>
             </div>
             <div className="relative">
-              <div className="rounded-3xl border border-white/60 bg-white/70 p-6 shadow-soft backdrop-blur">
-                <div className="flex items-center justify-between text-sm text-slate-500">
-                  <span>Operations dashboard</span>
-                  <span className="rounded-full bg-brand-soft px-3 py-1 text-xs font-semibold text-brand">
-                    Live
-                  </span>
-                </div>
-                <div className="mt-6 space-y-4">
-                  <div className="rounded-2xl bg-surface-muted p-4">
-                    <p className="text-xs uppercase tracking-[0.3em] text-slate-500">
-                      Today&apos;s deliveries
-                    </p>
-                    <p className="mt-2 text-3xl font-semibold text-ink">428</p>
-                    <p className="text-xs text-slate-500">
-                      96% on-time arrival
-                    </p>
-                  </div>
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    {[
-                      { label: "Scheduled events", value: "12" },
-                      { label: "Active wallets", value: "3,920" },
-                      { label: "Invoice status", value: "GST-ready" },
-                      { label: "Employee satisfaction", value: "4.8/5" },
-                    ].map((item) => (
-                      <div
-                        key={item.label}
-                        className="rounded-2xl border border-black/5 bg-white px-4 py-3 text-sm shadow-card"
-                      >
-                        <p className="text-xs text-slate-500">{item.label}</p>
-                        <p className="text-lg font-semibold text-ink">
-                          {item.value}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div className="pointer-events-none absolute -bottom-8 -left-10 h-24 w-24 rounded-full bg-[rgba(252,128,25,0.2)] blur-2xl" />
-              <div className="pointer-events-none absolute -right-8 top-12 h-24 w-24 rounded-full bg-[rgba(16,24,40,0.12)] blur-2xl" />
-            </div>
-          </div>
-          <div className="rounded-3xl border border-black/5 bg-white/80 p-6 shadow-card backdrop-blur">
-            <div className="grid gap-6 text-sm text-slate-600 md:grid-cols-3">
-              <div>
-                <p className="font-semibold text-ink">One partner, all use cases</p>
-                <p>Meals, rewards, celebrations, and travel dining—centrally managed.</p>
-              </div>
-              <div>
-                <p className="font-semibold text-ink">Finance-ready reporting</p>
-                <p>GST-compliant invoices with cost code tagging built in.</p>
-              </div>
-              <div>
-                <p className="font-semibold text-ink">White-glove execution</p>
-                <p>Concierge handles vendor coordination, bookings, and logistics.</p>
+              <div className="relative h-[420px] overflow-hidden rounded-3xl border border-black/5 bg-white shadow-soft sm:h-[480px]">
+                <Image
+                  src="/hero-banner.png"
+                  alt="Swiggy for Work team meals"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  className="object-cover"
+                />
               </div>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -228,7 +179,7 @@ export default function Home() {
                 <Link
                   key={solution.title}
                   href={solution.href}
-                  className="group rounded-3xl border border-black/5 bg-white p-6 shadow-card transition hover:-translate-y-1 hover:border-[rgba(252,128,25,0.4)]"
+                  className="group rounded-3xl border border-black/5 bg-white p-6 shadow-card transition hover:-translate-y-1 hover:border-[rgba(237,82,15,0.4)]"
                 >
                   <div className="flex items-center gap-4">
                     <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-soft text-brand">
@@ -250,65 +201,6 @@ export default function Home() {
                 </Link>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      <section className="px-6 py-20">
-        <div className="mx-auto w-full max-w-6xl space-y-12">
-          <div className="grid gap-8 md:grid-cols-[1fr_1.2fr] md:items-center">
-            <div className="space-y-4">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
-                How it works
-              </p>
-              <h2 className="text-3xl font-semibold text-ink">
-                One workflow for every team meal, from request to reconciliation
-              </h2>
-              <p className="text-slate-700">
-                Centralize requests, set policies, and let the Swiggy for Work
-                concierge team execute at scale. Your teams get food on time, and
-                finance gets clean, auditable records.
-              </p>
-            </div>
-            <div className="grid gap-4">
-              {[
-                {
-                  title: "Tell us the requirement",
-                  detail:
-                    "Share headcount, venue, cuisine preferences, and budget in one form.",
-                },
-                {
-                  title: "We design the plan",
-                  detail:
-                    "Menus, vendor selection, and logistics are confirmed with your policies.",
-                },
-                {
-                  title: "Concierge executes",
-                  detail:
-                    "Real-time tracking, on-ground coordination, and delivery assurance.",
-                },
-                {
-                  title: "Finance-ready closure",
-                  detail:
-                    "GST invoices, cost center tagging, and ERP-ready reporting.",
-                },
-              ].map((step, index) => (
-                <div
-                  key={step.title}
-                  className="flex gap-4 rounded-2xl border border-black/5 bg-white p-4 shadow-card"
-                >
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand text-sm font-semibold text-white">
-                    0{index + 1}
-                  </span>
-                  <div>
-                    <p className="text-base font-semibold text-ink">
-                      {step.title}
-                    </p>
-                    <p className="text-sm text-slate-500">{step.detail}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -347,18 +239,18 @@ export default function Home() {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
-                Testimonials
+                Customer cheers
               </p>
               <h2 className="mt-2 text-3xl font-semibold text-ink">
-                Built with enterprise stakeholders in mind
+                What our customers say about Swiggy for Work
               </h2>
             </div>
           </div>
-          <div className="flex gap-6 overflow-x-auto pb-4">
+          <div className="flex gap-6 overflow-x-auto pb-4 pt-2 snap-x snap-mandatory">
             {testimonials.map((testimonial) => (
               <article
                 key={testimonial.name}
-                className="min-w-[280px] max-w-sm flex-1 rounded-3xl border border-black/5 bg-white p-6 shadow-card"
+                className="min-w-[280px] max-w-sm flex-1 snap-start rounded-3xl border border-black/5 bg-white p-6 shadow-card"
               >
                 <p className="text-sm text-slate-700">&ldquo;{testimonial.quote}&rdquo;</p>
                 <div className="mt-6 text-sm">
@@ -379,21 +271,18 @@ export default function Home() {
                 Get in touch
               </p>
               <h2 className="text-3xl font-semibold text-ink">
-                Tell us about your requirement
+                Let's plan your next workplace meal
               </h2>
               <p className="text-slate-700">
-                Share the offering you need and our enterprise team will build a
-                tailored plan with pricing, SLAs, and implementation timelines.
+                Share a few details and our team will get back with the right
+                solution.
               </p>
-              <div className="rounded-2xl bg-brand-soft p-4 text-sm text-slate-700">
-                Typical response time: under 24 hours for enterprise enquiries.
-              </div>
             </div>
             <form className="grid gap-4 text-sm">
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="flex flex-col gap-2">
                   <label className="font-semibold text-ink" htmlFor="role">
-                    Who are you?
+                    Who are you-
                   </label>
                   <select
                     id="role"
@@ -409,7 +298,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col gap-2">
                   <label className="font-semibold text-ink" htmlFor="offering">
-                    What offering are you interested in?
+                    What offering are you interested in-
                   </label>
                   <select
                     id="offering"

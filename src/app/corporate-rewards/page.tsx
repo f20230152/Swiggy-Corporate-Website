@@ -5,31 +5,32 @@ import { RewardsIcon } from "@/components/icons";
 export const metadata: Metadata = {
   title: "Corporate Rewards",
   description:
-    "Reward verified employees with premium Swiggy experiences and lifestyle partnerships.",
+    "Onboard your company so verified employees can access exclusive Swiggy offers.",
 };
 
 const stats = [
   { label: "Verified employees", value: "3.1 lakh" },
   { label: "Corporate partners", value: "10K+" },
-  { label: "Repeat rate", value: "1.85×" },
+  { label: "Tier-1 audience", value: "High-quality" },
+  { label: "Repeat rate", value: "1.85x" },
   { label: "Monthly visits", value: "90%+" },
 ];
 
 const rewardTypes = [
   {
+    title: "Exclusive Swiggy offers",
+    detail:
+      "Verified employees unlock offers across Food Delivery, Dineout, and Instamart.",
+  },
+  {
     title: "Swiggy One membership",
     detail:
-      "Exclusive benefits across Food, Instamart, and Dineout for top performers.",
+      "Premium membership benefits for top performers and high-impact teams.",
   },
   {
     title: "Lifestyle partnerships",
     detail:
-      "Curated rewards across Tech, Travel, Fashion, and Entertainment brands.",
-  },
-  {
-    title: "Meal credits",
-    detail:
-      "Pre-approved meal allowances for everyday recognition and engagement.",
+      "Select partnerships across Tech, Travel, Fashion, and Entertainment.",
   },
 ];
 
@@ -61,12 +62,12 @@ export default function CorporateRewardsPage() {
               Corporate Rewards
             </p>
             <h1 className="text-4xl font-semibold text-ink sm:text-5xl">
-              Enterprise rewards that employees actually want
+              Onboard your company for exclusive Swiggy offers
             </h1>
             <p className="text-lg text-slate-700">
-              Engage verified employees with premium Swiggy experiences and
-              lifestyle partnerships. Built for Tier-1 corporate audiences who
-              value quality, convenience, and choice.
+              Enable verified employees to access exclusive Swiggy offers and
+              rewards. Built for Tier-1 corporate audiences who value quality,
+              convenience, and choice.
             </p>
             <div className="flex flex-wrap gap-3 text-sm text-slate-500">
               <span className="rounded-full border border-black/10 px-4 py-2">
@@ -159,9 +160,9 @@ export default function CorporateRewardsPage() {
               What employees get
             </p>
             <ul className="mt-4 space-y-2 text-sm text-slate-500">
-              <li>• Exclusive Swiggy One pricing and priority access</li>
-              <li>• Curated rewards refreshed monthly</li>
-              <li>• Seamless redemption in the Swiggy ecosystem</li>
+              <li>- Swiggy One membership benefits</li>
+              <li>- Food, Instamart, and Dineout offers</li>
+              <li>- Lifestyle partnerships across Tech, Travel, Fashion</li>
             </ul>
           </div>
           <div className="rounded-3xl border border-black/5 bg-white p-6 shadow-card">
@@ -169,9 +170,9 @@ export default function CorporateRewardsPage() {
               How companies onboard
             </p>
             <ul className="mt-4 space-y-2 text-sm text-slate-500">
-              <li>• Dedicated enterprise manager for rollout</li>
-              <li>• SSO-ready employee verification</li>
-              <li>• Budget and reward cadence controls</li>
+              <li>- Dedicated enterprise manager for rollout</li>
+              <li>- SSO-ready employee verification</li>
+              <li>- Budget and reward cadence controls</li>
             </ul>
           </div>
         </div>

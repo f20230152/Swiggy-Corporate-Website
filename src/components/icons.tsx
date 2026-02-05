@@ -1,5 +1,5 @@
 type IconProps = {
-  className?: string;
+  className-: string;
 };
 
 export function WalletIcon({ className }: IconProps) {

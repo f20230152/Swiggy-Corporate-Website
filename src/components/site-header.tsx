@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const navItems = [
@@ -11,14 +12,17 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
-        <Link
-          href="/"
-          className="flex items-center gap-2 text-lg font-semibold text-ink"
-        >
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand text-sm font-bold text-white">
-            S
+        <Link href="/" className="flex items-center gap-3 text-lg text-ink">
+          <Image
+            src="/swiggy-logo.png"
+            alt="Swiggy"
+            width={36}
+            height={36}
+            priority
+          />
+          <span className="font-heading text-lg font-semibold tracking-tight">
+            Swiggy for Work
           </span>
-          <span className="font-heading tracking-tight">Swiggy for Work</span>
         </Link>
         <nav
           aria-label="Primary"
