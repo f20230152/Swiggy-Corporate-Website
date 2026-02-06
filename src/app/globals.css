@@ -3,7 +3,7 @@
 :root {
   --brand: #ed520f;
   --brand-strong: #d6490d;
-  --brand-soft: #fff2e9;
+  --brand-soft: rgba(237, 82, 15, 0.12);
   --ink: #101828;
   --slate-700: #344054;
   --slate-500: #667085;
@@ -28,7 +28,8 @@
 body {
   background: linear-gradient(180deg, #ffffff 0%, #f6f7fb 100%);
   color: var(--ink);
-  font-family: var(--font-body), ui-sans-serif, system-ui;
+  font-family: "Proxima Nova", "ProximaNova", "Proxima Nova Alt",
+    "Helvetica Neue", Arial, sans-serif;
   text-rendering: optimizeLegibility;
 }
 
@@ -42,7 +43,8 @@ body {
   h2,
   h3,
   h4 {
-    font-family: var(--font-heading), ui-sans-serif, system-ui;
+    font-family: "Proxima Nova", "ProximaNova", "Proxima Nova Alt",
+      "Helvetica Neue", Arial, sans-serif;
     letter-spacing: -0.02em;
   }
 

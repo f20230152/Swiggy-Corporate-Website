@@ -1,20 +1,7 @@
 import type { Metadata } from "next";
-import { Manrope, Sora } from "next/font/google";
 import "./globals.css";
 import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-body",
-  display: "swap",
-});
-
-const sora = Sora({
-  subsets: ["latin"],
-  variable: "--font-heading",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: {
@@ -49,9 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${manrope.variable} ${sora.variable} antialiased text-ink`}
-      >
+      <body className="antialiased text-ink">
         <div className="min-h-screen bg-surface">
           <SiteHeader />
           <main className="relative">{children}</main>
