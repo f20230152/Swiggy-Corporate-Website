@@ -1,13 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const navItems = [
-  { label: "Solutions", href: "/#solutions" },
-  { label: "Why Swiggy", href: "/#why-swiggy" },
-  { label: "Testimonials", href: "/#testimonials" },
-  { label: "Get in touch", href: "/#contact" },
-];
-
 const assetBase = process.env.NEXT_PUBLIC_BASE_PATH
   ? `/${process.env.NEXT_PUBLIC_BASE_PATH.replace(/^\/+|\/+$/g, "")}`
   : "";
@@ -20,28 +13,14 @@ export default function SiteHeader() {
           <Image
             src={`${assetBase}/swiggy-logo.png`}
             alt="Swiggy"
-            width={48}
-            height={48}
+            width={56}
+            height={56}
             priority
           />
-          <span className="font-heading text-lg font-semibold tracking-tight">
+          <span className="font-heading text-lg font-semibold tracking-tight text-brand">
             Swiggy for Work
           </span>
         </Link>
-        <nav
-          aria-label="Primary"
-          className="flex flex-1 flex-wrap items-center justify-center gap-5 text-sm font-medium text-slate-700"
-        >
-          {navItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="transition hover:text-ink"
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
         <div className="flex items-center gap-3">
           <Link
             href="/#contact"

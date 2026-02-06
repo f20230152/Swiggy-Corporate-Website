@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const footerLinks = [
-  { label: "Corporate Wallet", href: "/corporate-wallet" },
+  { label: "Swiggy Corporate", href: "/corporate-wallet" },
   { label: "Corporate Rewards", href: "/corporate-rewards" },
   { label: "Concierge Dining", href: "/concierge-led-food-dining" },
   { label: "Gift Cards", href: "/gift-cards" },

@@ -11,7 +11,7 @@ import {
 
 const solutions = [
   {
-    title: "Corporate Wallet",
+    title: "Swiggy Corporate",
     description:
       "Eliminate reimbursements with a digital-first corporate payment solution.",
     href: "/corporate-wallet",
@@ -245,9 +245,19 @@ export default function Home() {
             {testimonials.map((testimonial) => (
               <article
                 key={testimonial.name}
-                className="min-w-[280px] max-w-sm flex-1 snap-start rounded-3xl border border-black/10 bg-white p-6 shadow-soft"
+                className="min-w-[280px] max-w-sm flex-1 snap-start rounded-3xl border border-white/60 bg-white p-6 shadow-soft"
               >
-                <p className="text-sm text-slate-700">&ldquo;{testimonial.quote}&rdquo;</p>
+                <div className="flex items-center gap-3 text-brand">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand-soft text-lg font-semibold text-brand">
+                    &ldquo;
+                  </span>
+                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                    Customer cheers
+                  </span>
+                </div>
+                <p className="mt-4 text-sm text-slate-700">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </p>
                 <div className="mt-6 text-sm">
                   <p className="font-semibold text-ink">{testimonial.name}</p>
                   <p className="text-slate-500">{testimonial.role}</p>
@@ -300,7 +310,7 @@ export default function Home() {
                     name="offering"
                     className="rounded-2xl border border-black/10 px-4 py-3"
                   >
-                    <option>Corporate Wallet</option>
+                    <option>Swiggy Corporate</option>
                     <option>Corporate Rewards</option>
                     <option>Concierge-Led Food & Dining</option>
                     <option>Gift Cards</option>

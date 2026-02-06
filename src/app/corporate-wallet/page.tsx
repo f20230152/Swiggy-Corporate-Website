@@ -3,7 +3,7 @@ import CtaBand from "@/components/cta-band";
 import { WalletIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Corporate Wallet",
+  title: "Swiggy Corporate",
   description:
     "Digitize corporate meal and travel expenses with Swiggy for Work and MakeMyTrip myBiz integration.",
 };
@@ -95,7 +95,7 @@ export default function CorporateWalletPage() {
               Corporate Wallet + myBiz integration
             </p>
             <h1 className="text-4xl font-semibold text-ink sm:text-5xl">
-              Corporate Wallet
+              Swiggy Corporate
             </h1>
             <p className="text-lg text-slate-700">
               Eliminating reimbursements, enhancing efficiency. Transform how
