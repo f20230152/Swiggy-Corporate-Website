@@ -22,8 +22,8 @@ export default function SiteFooter() {
               <Image
                 src={`${assetBase}/swiggy-logo.png`}
                 alt="Swiggy"
-                width={36}
-                height={36}
+                width={44}
+                height={44}
               />
               <span className="font-heading tracking-tight">
                 Swiggy for Work

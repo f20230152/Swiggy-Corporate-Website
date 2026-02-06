@@ -162,16 +162,13 @@ export default function Home() {
         <div className="mx-auto w-full max-w-6xl space-y-10">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
                 Key service offerings
               </p>
-              <h2 className="mt-2 text-3xl font-semibold text-ink">
-                Built for every corporate meal moment
-              </h2>
             </div>
             <Link
               href="/#contact"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-brand"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-white"
             >
               Talk to an expert <ChevronRight className="h-4 w-4" />
             </Link>
@@ -183,7 +180,7 @@ export default function Home() {
                 <Link
                   key={solution.title}
                   href={solution.href}
-                  className="group rounded-3xl border border-black/5 bg-white p-6 shadow-card transition hover:-translate-y-1 hover:border-[rgba(237,82,15,0.4)]"
+                  className="group rounded-3xl border border-black/10 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:border-[rgba(237,82,15,0.6)]"
                 >
                   <div className="flex items-center gap-4">
                     <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-soft text-brand">
@@ -213,14 +210,11 @@ export default function Home() {
         <div className="mx-auto w-full max-w-6xl space-y-10">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
                 Why choose Swiggy for Work
               </p>
-              <h2 className="mt-2 text-3xl font-semibold text-ink">
-                Enterprise credibility with consumer-grade delight
-              </h2>
             </div>
-            <div className="rounded-full bg-brand-soft px-4 py-2 text-sm font-semibold text-brand">
+            <div className="rounded-full bg-white/20 px-4 py-2 text-sm font-semibold text-white">
               Trusted by HR, Admin & Finance teams
             </div>
           </div>
@@ -228,7 +222,7 @@ export default function Home() {
             {whySwiggy.map((item) => (
               <div
                 key={item.title}
-                className="rounded-3xl border border-black/5 bg-white p-6 shadow-card"
+                className="rounded-3xl border border-black/10 bg-white p-6 shadow-soft"
               >
                 <h3 className="text-xl font-semibold text-ink">{item.title}</h3>
                 <p className="mt-3 text-sm text-slate-500">{item.description}</p>
@@ -242,19 +236,16 @@ export default function Home() {
         <div className="mx-auto w-full max-w-6xl space-y-8">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
                 Customer cheers
               </p>
-              <h2 className="mt-2 text-3xl font-semibold text-ink">
-                What our customers say about Swiggy for Work
-              </h2>
             </div>
           </div>
           <div className="flex gap-6 overflow-x-auto pb-4 pt-2 snap-x snap-mandatory">
             {testimonials.map((testimonial) => (
               <article
                 key={testimonial.name}
-                className="min-w-[280px] max-w-sm flex-1 snap-start rounded-3xl border border-black/5 bg-white p-6 shadow-card"
+                className="min-w-[280px] max-w-sm flex-1 snap-start rounded-3xl border border-black/10 bg-white p-6 shadow-soft"
               >
                 <p className="text-sm text-slate-700">&ldquo;{testimonial.quote}&rdquo;</p>
                 <div className="mt-6 text-sm">
