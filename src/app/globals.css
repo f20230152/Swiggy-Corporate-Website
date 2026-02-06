@@ -27,7 +27,7 @@
 
 body {
   background: var(--brand);
-  color: var(--ink);
+  color: #ffffff;
   font-family: var(--font-body), "Proxima Nova", "ProximaNova",
     "Helvetica Neue", Arial, sans-serif;
   text-rendering: optimizeLegibility;
