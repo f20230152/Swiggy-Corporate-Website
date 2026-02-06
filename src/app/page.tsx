@@ -85,7 +85,7 @@ const testimonials = [
 
 export default function Home() {
   const assetBase = process.env.NEXT_PUBLIC_BASE_PATH
-    ? `/${process.env.NEXT_PUBLIC_BASE_PATH.replace(/^\\/+|\\/+$/g, "")}`
+    ? `/${process.env.NEXT_PUBLIC_BASE_PATH.replace(/^\/+|\/+$/g, "")}`
     : "";
 
   const schema = {
