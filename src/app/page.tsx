@@ -270,7 +270,7 @@ export default function Home() {
 
       <section id="contact" className="px-6 pb-24 pt-20">
         <div className="mx-auto w-full max-w-6xl">
-          <div className="grid gap-8 rounded-3xl border border-black/5 bg-white p-10 shadow-soft lg:grid-cols-[1fr_1.1fr]">
+          <div className="grid gap-8 rounded-3xl border border-white/60 bg-white p-10 text-ink shadow-soft lg:grid-cols-[1fr_1.1fr]">
             <div className="space-y-4">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
                 Get in touch
@@ -283,7 +283,7 @@ export default function Home() {
                 solution.
               </p>
             </div>
-            <form className="grid gap-4 text-sm">
+            <form className="grid gap-4 text-sm text-ink">
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="flex flex-col gap-2">
                   <label className="font-semibold text-ink" htmlFor="role">
@@ -292,7 +292,7 @@ export default function Home() {
                   <select
                     id="role"
                     name="role"
-                    className="rounded-2xl border border-black/10 px-4 py-3"
+                    className="rounded-2xl border border-black/10 bg-white px-4 py-3 text-ink"
                   >
                     <option>Employee</option>
                     <option>HR</option>
@@ -308,7 +308,7 @@ export default function Home() {
                   <select
                     id="offering"
                     name="offering"
-                    className="rounded-2xl border border-black/10 px-4 py-3"
+                    className="rounded-2xl border border-black/10 bg-white px-4 py-3 text-ink"
                   >
                     <option>Swiggy Corporate</option>
                     <option>Corporate Rewards</option>
@@ -326,7 +326,7 @@ export default function Home() {
                     id="name"
                     name="name"
                     placeholder="Your full name"
-                    className="rounded-2xl border border-black/10 px-4 py-3"
+                    className="rounded-2xl border border-black/10 bg-white px-4 py-3 text-ink placeholder:text-slate-400"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
@@ -337,7 +337,7 @@ export default function Home() {
                     id="company"
                     name="company"
                     placeholder="Company name"
-                    className="rounded-2xl border border-black/10 px-4 py-3"
+                    className="rounded-2xl border border-black/10 bg-white px-4 py-3 text-ink placeholder:text-slate-400"
                   />
                 </div>
               </div>
@@ -351,7 +351,7 @@ export default function Home() {
                     name="email"
                     type="email"
                     placeholder="name@company.com"
-                    className="rounded-2xl border border-black/10 px-4 py-3"
+                    className="rounded-2xl border border-black/10 bg-white px-4 py-3 text-ink placeholder:text-slate-400"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
@@ -363,7 +363,7 @@ export default function Home() {
                     name="phone"
                     type="tel"
                     placeholder="+91 00000 00000"
-                    className="rounded-2xl border border-black/10 px-4 py-3"
+                    className="rounded-2xl border border-black/10 bg-white px-4 py-3 text-ink placeholder:text-slate-400"
                   />
                 </div>
               </div>
