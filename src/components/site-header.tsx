@@ -13,8 +13,8 @@ export default function SiteHeader() {
           <Image
             src={`${assetBase}/swiggy-logo.png`}
             alt="Swiggy"
-            width={56}
-            height={56}
+            width={112}
+            height={112}
             priority
           />
           <span className="font-heading text-lg font-semibold tracking-tight text-brand">
