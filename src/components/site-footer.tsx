@@ -8,6 +8,10 @@ const footerLinks = [
   { label: "Gift Cards", href: "/gift-cards" },
 ];
 
+const assetBase = process.env.NEXT_PUBLIC_BASE_PATH
+  ? `/${process.env.NEXT_PUBLIC_BASE_PATH.replace(/^\\/+|\\/+$/g, "")}`
+  : "";
+
 export default function SiteFooter() {
   return (
     <footer className="border-t border-black/5 bg-white">
@@ -16,7 +20,7 @@ export default function SiteFooter() {
           <div className="space-y-4">
             <div className="flex items-center gap-3 text-lg font-semibold text-ink">
               <Image
-                src="/swiggy-logo.png"
+                src={`${assetBase}/swiggy-logo.png`}
                 alt="Swiggy"
                 width={36}
                 height={36}

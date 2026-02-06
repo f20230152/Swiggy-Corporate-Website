@@ -84,6 +84,10 @@ const testimonials = [
 ];
 
 export default function Home() {
+  const assetBase = process.env.NEXT_PUBLIC_BASE_PATH
+    ? `/${process.env.NEXT_PUBLIC_BASE_PATH.replace(/^\\/+|\\/+$/g, "")}`
+    : "";
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -111,14 +115,14 @@ export default function Home() {
       <section className="relative overflow-hidden px-6 pb-20 pt-14">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-12">
           <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr]">
-            <div className="space-y-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+            <div className="space-y-6 text-white">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
                 Swiggy for Work
               </p>
-              <h1 className="text-4xl font-semibold leading-tight text-ink sm:text-5xl">
+              <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
                 Unparalleled convenience for workplace food.
               </h1>
-              <p className="text-lg text-slate-700">
+              <p className="text-lg text-white/85">
                 Simplify food for every workplace event, from team lunches to
                 celebrations and offsites.
               </p>
@@ -131,7 +135,7 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/#solutions"
-                  className="inline-flex items-center justify-center rounded-full border border-black/10 px-6 py-3 text-sm font-semibold text-ink transition hover:border-[var(--brand)] hover:text-[var(--brand)]"
+                  className="inline-flex items-center justify-center rounded-full border border-white/60 px-6 py-3 text-sm font-semibold text-white transition hover:border-white hover:text-white"
                 >
                   Explore Solutions
                 </Link>
@@ -140,7 +144,7 @@ export default function Home() {
             <div className="relative">
               <div className="relative h-[420px] overflow-hidden rounded-3xl border border-black/5 bg-white shadow-soft sm:h-[480px]">
                 <Image
-                  src="/hero-banner.png"
+                  src={`${assetBase}/hero-banner.png`}
                   alt="Swiggy for Work team meals"
                   fill
                   priority

@@ -8,13 +8,17 @@ const navItems = [
   { label: "Get in touch", href: "/#contact" },
 ];
 
+const assetBase = process.env.NEXT_PUBLIC_BASE_PATH
+  ? `/${process.env.NEXT_PUBLIC_BASE_PATH.replace(/^\\/+|\\/+$/g, "")}`
+  : "";
+
 export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
         <Link href="/" className="flex items-center gap-3 text-lg text-ink">
           <Image
-            src="/swiggy-logo.png"
+            src={`${assetBase}/swiggy-logo.png`}
             alt="Swiggy"
             width={36}
             height={36}
