@@ -50,25 +50,25 @@ export default function GiftCardsPage() {
     <div className="px-6 py-14">
       <section className="mx-auto w-full max-w-6xl space-y-10">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div className="space-y-5">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+          <div className="space-y-5 text-white">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
               Gift Cards
             </p>
-            <h1 className="text-4xl font-semibold text-ink sm:text-5xl">
+            <h1 className="text-4xl font-semibold text-white sm:text-5xl">
               Reward great work with Swiggy Gift Cards
             </h1>
-            <p className="text-lg text-slate-700">
+            <p className="text-lg text-white/85">
               Instant, hassle-free gifting for rewards, birthdays, and
               allowances, backed by enterprise-grade controls.
             </p>
-            <div className="flex flex-wrap gap-3 text-sm text-slate-500">
-              <span className="rounded-full border border-black/10 px-4 py-2">
+            <div className="flex flex-wrap gap-3 text-sm text-white">
+              <span className="rounded-full border border-white/40 px-4 py-2">
                 Prepaid solutions
               </span>
-              <span className="rounded-full border border-black/10 px-4 py-2">
+              <span className="rounded-full border border-white/40 px-4 py-2">
                 Instant distribution
               </span>
-              <span className="rounded-full border border-black/10 px-4 py-2">
+              <span className="rounded-full border border-white/40 px-4 py-2">
                 Centralized reporting
               </span>
             </div>

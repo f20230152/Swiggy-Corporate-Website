@@ -65,26 +65,26 @@ export default function ConciergeLedFoodDiningPage() {
     <div className="px-6 py-14">
       <section className="mx-auto w-full max-w-6xl space-y-10">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div className="space-y-5">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+          <div className="space-y-5 text-white">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
               Concierge-Led Food & Dining
             </p>
-            <h1 className="text-4xl font-semibold text-ink sm:text-5xl">
+            <h1 className="text-4xl font-semibold text-white sm:text-5xl">
               Large-scale corporate meals, handled end to end
             </h1>
-            <p className="text-lg text-slate-700">
+            <p className="text-lg text-white/85">
               From onboarding lunches to quarterly celebrations, Swiggy for Work
               offers a concierge-led experience that keeps your teams fed and
               your operations teams in control.
             </p>
-            <div className="flex flex-wrap gap-3 text-sm text-slate-500">
-              <span className="rounded-full border border-black/10 px-4 py-2">
+            <div className="flex flex-wrap gap-3 text-sm text-white">
+              <span className="rounded-full border border-white/40 px-4 py-2">
                 50+ thali deliveries
               </span>
-              <span className="rounded-full border border-black/10 px-4 py-2">
+              <span className="rounded-full border border-white/40 px-4 py-2">
                 Dedicated concierge team
               </span>
-              <span className="rounded-full border border-black/10 px-4 py-2">
+              <span className="rounded-full border border-white/40 px-4 py-2">
                 Single consolidated invoice
               </span>
             </div>
