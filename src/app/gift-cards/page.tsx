@@ -73,16 +73,16 @@ export default function GiftCardsPage() {
               </span>
             </div>
           </div>
-          <div className="rounded-3xl border border-black/5 bg-white p-6 shadow-soft">
+          <div className="rounded-3xl border border-white/25 bg-white/10 p-6 text-white shadow-soft">
             <div className="flex items-center gap-4">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-soft text-brand">
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15 text-white">
                 <GiftIcon className="h-6 w-6" />
               </span>
               <div>
-                <p className="text-sm font-semibold text-ink">
+                <p className="text-sm font-semibold text-white">
                   Gift card command center
                 </p>
-                <p className="text-sm text-slate-500">
+                <p className="text-sm text-white/75">
                   Schedule, distribute, and track redemptions in one portal.
                 </p>
               </div>
@@ -92,7 +92,7 @@ export default function GiftCardsPage() {
                 (item) => (
                   <div
                     key={item}
-                    className="rounded-2xl border border-black/5 bg-surface-muted px-4 py-3 text-sm"
+                    className="rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-sm text-white/85"
                   >
                     {item}
                   </div>

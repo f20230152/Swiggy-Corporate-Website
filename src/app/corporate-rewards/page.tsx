@@ -81,16 +81,16 @@ export default function CorporateRewardsPage() {
               </span>
             </div>
           </div>
-          <div className="rounded-3xl border border-black/5 bg-white p-6 shadow-soft">
+          <div className="rounded-3xl border border-white/25 bg-white/10 p-6 text-white shadow-soft">
             <div className="flex items-center gap-4">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-soft text-brand">
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15 text-white">
                 <RewardsIcon className="h-6 w-6" />
               </span>
               <div>
-                <p className="text-sm font-semibold text-ink">
+                <p className="text-sm font-semibold text-white">
                   Rewards dashboard
                 </p>
-                <p className="text-sm text-slate-500">
+                <p className="text-sm text-white/75">
                   Track engagement, redemptions, and budgets in real time.
                 </p>
               </div>
@@ -99,10 +99,10 @@ export default function CorporateRewardsPage() {
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="rounded-2xl border border-black/5 bg-surface-muted px-4 py-3 text-sm"
+                  className="rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-sm"
                 >
-                  <p className="text-xs text-slate-500">{stat.label}</p>
-                  <p className="text-lg font-semibold text-ink">{stat.value}</p>
+                  <p className="text-xs text-white/70">{stat.label}</p>
+                  <p className="text-lg font-semibold text-white">{stat.value}</p>
                 </div>
               ))}
             </div>

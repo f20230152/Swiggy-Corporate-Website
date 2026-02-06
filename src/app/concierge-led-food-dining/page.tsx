@@ -89,22 +89,22 @@ export default function ConciergeLedFoodDiningPage() {
               </span>
             </div>
           </div>
-          <div className="rounded-3xl border border-black/5 bg-white p-6 shadow-soft">
+          <div className="rounded-3xl border border-white/25 bg-white/10 p-6 text-white shadow-soft">
             <div className="flex items-center gap-4">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-soft text-brand">
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15 text-white">
                 <ConciergeIcon className="h-6 w-6" />
               </span>
               <div>
-                <p className="text-sm font-semibold text-ink">
+                <p className="text-sm font-semibold text-white">
                   Concierge control center
                 </p>
-                <p className="text-sm text-slate-500">
+                <p className="text-sm text-white/75">
                   Track events, ETA, and vendor communications in one view.
                 </p>
               </div>
             </div>
-            <div className="mt-6 space-y-3 rounded-2xl bg-surface-muted p-4 text-sm text-slate-600">
-              <p className="font-semibold text-ink">Typical use cases</p>
+            <div className="mt-6 space-y-3 rounded-2xl border border-white/20 bg-white/10 p-4 text-sm text-white/85">
+              <p className="font-semibold text-white">Typical use cases</p>
               <ul className="space-y-2">
                 {useCases.slice(0, 3).map((useCase) => (
                   <li key={useCase}>- {useCase}</li>
