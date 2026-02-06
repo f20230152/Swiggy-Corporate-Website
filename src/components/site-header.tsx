@@ -9,7 +9,7 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
-        <Link href="/" className="flex items-center gap-3 text-lg text-ink">
+        <Link href="/" className="flex items-center gap-4 text-lg text-ink">
           <Image
             src={`${assetBase}/swiggy-logo.png`}
             alt="Swiggy"
@@ -17,7 +17,7 @@ export default function SiteHeader() {
             height={112}
             priority
           />
-          <span className="font-heading text-lg font-semibold tracking-tight text-brand">
+          <span className="flex items-center text-[40px] font-bold tracking-tight text-brand">
             Swiggy for Work
           </span>
         </Link>
