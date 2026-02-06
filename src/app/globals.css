@@ -26,9 +26,9 @@
 }
 
 body {
-  background: linear-gradient(180deg, #ffffff 0%, #f6f7fb 100%);
+  background: var(--brand);
   color: var(--ink);
-  font-family: "Proxima Nova", "ProximaNova", "Proxima Nova Alt",
+  font-family: var(--font-body), "Proxima Nova", "ProximaNova",
     "Helvetica Neue", Arial, sans-serif;
   text-rendering: optimizeLegibility;
 }
@@ -43,7 +43,7 @@ body {
   h2,
   h3,
   h4 {
-    font-family: "Proxima Nova", "ProximaNova", "Proxima Nova Alt",
+    font-family: var(--font-body), "Proxima Nova", "ProximaNova",
       "Helvetica Neue", Arial, sans-serif;
     letter-spacing: -0.02em;
   }

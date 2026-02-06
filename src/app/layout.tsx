@@ -1,7 +1,35 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
+
+const metropolis = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Metropolis-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Metropolis-Medium.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Metropolis-SemiBold.otf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Metropolis-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-body",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -36,8 +64,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased text-ink">
-        <div className="min-h-screen bg-surface">
+      <body className={`${metropolis.variable} antialiased text-ink`}>
+        <div className="min-h-screen bg-brand">
           <SiteHeader />
           <main className="relative">{children}</main>
           <SiteFooter />
