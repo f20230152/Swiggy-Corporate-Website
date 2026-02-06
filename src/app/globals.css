@@ -38,6 +38,20 @@ body {
   color: #ffffff;
 }
 
+select,
+option {
+  color: #101828;
+  background-color: #ffffff;
+}
+
+select:focus,
+option:checked,
+option:focus,
+option:hover {
+  background-color: var(--brand);
+  color: #ffffff;
+}
+
 @layer base {
   h1,
   h2,
