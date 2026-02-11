@@ -4,26 +4,36 @@ import "./globals.css";
 import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
 
-const metropolis = localFont({
+const gilroy = localFont({
   src: [
     {
-      path: "../../public/fonts/Metropolis-Regular.otf",
+      path: "../../gilroy/Gilroy-Regular.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../../public/fonts/Metropolis-Medium.otf",
+      path: "../../gilroy/Gilroy-Medium.ttf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../../public/fonts/Metropolis-SemiBold.otf",
+      path: "../../gilroy/Gilroy-SemiBold.ttf",
       weight: "600",
       style: "normal",
     },
     {
-      path: "../../public/fonts/Metropolis-Bold.otf",
+      path: "../../gilroy/Gilroy-Bold.ttf",
       weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../gilroy/Gilroy-ExtraBold.ttf",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "../../gilroy/Gilroy-Black.ttf",
+      weight: "900",
       style: "normal",
     },
   ],
@@ -64,7 +74,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${metropolis.variable} antialiased text-ink`}>
+      <body className={`${gilroy.variable} antialiased text-ink`}>
         <div className="min-h-screen bg-brand">
           <SiteHeader />
           <main className="relative">{children}</main>
