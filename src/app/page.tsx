@@ -11,7 +11,7 @@ import {
 
 const solutions = [
   {
-    title: "Swiggy Corporate",
+    title: "Corporate Payment Solution",
     description:
       "Eliminate reimbursements with a digital-first corporate payment solution.",
     href: "/corporate-wallet",
@@ -20,7 +20,7 @@ const solutions = [
   {
     title: "Corporate Rewards",
     description:
-      "Onboard your company so employees can access exclusive Swiggy offers.",
+      "Get access to exclusive corporate rewards on Food, Instamart, Dineout and more.",
     href: "/corporate-rewards",
     icon: RewardsIcon,
   },
@@ -32,7 +32,8 @@ const solutions = [
   },
   {
     title: "Concierge-Led Food & Dining",
-    description: "Single point of contact for bulk orders and dining events.",
+    description:
+      "Hassle-free bulk food delivery and seamless restaurant bookings for team outings.",
     href: "/concierge-led-food-dining",
     icon: ConciergeIcon,
   },
@@ -40,46 +41,65 @@ const solutions = [
 
 const whySwiggy = [
   {
-    title: "Unmatched Expertise",
+    title: "Long Standing Expertise",
     description:
-      "10+ years of leadership in food delivery and online commerce for enterprise teams.",
+      "10+ years pioneering food delivery - a trusted, category-defining brand embedded in daily Indian life.",
+    logo: "/swiggy-logo.png",
   },
   {
-    title: "Vast Network",
+    title: "Vast Restaurant Network",
     description:
-      "Thousands of restaurants with zero vendor management and guaranteed coverage.",
+      "A wide choice that delights, without the hassle of coordinating with multiple restaurants or dealing with inconsistent experiences.",
+    logo: "/swiggy-logo.png",
   },
   {
-    title: "Seamless Process",
+    title: "Effortlessly Simple",
     description:
-      "Concierge-led execution through one touchpoint, built for HR, Admin, and Finance.",
+      "Fast onboarding with seamless ordering, billing, and support - adding meaningful value to your everyday food needs.",
+    logo: "/swiggy-logo.png",
   },
 ];
 
 const testimonials = [
   {
+    offering: "Corporate Payment Solution",
     quote:
       "The main issue for me was the anxiety around credit card bill dues because of the reimbursement process. That's gone now.",
     name: "Jay",
-    role: "Sr. Business Development Manager, MakeMyTrip",
+    designation: "Sr. Business Development Manager",
+    company: "MakeMyTrip",
+    personImage: "/testimonials/person-1.svg",
+    companyLogo: "/testimonials/company-1.svg",
   },
   {
+    offering: "Corporate Rewards",
     quote:
       "Getting a proper GST bill in a small town used to be impossible. Now, it's all handled in the app.",
     name: "Piyush",
-    role: "Business Development Manager, MakeMyTrip",
+    designation: "Business Development Manager",
+    company: "MakeMyTrip",
+    personImage: "/testimonials/person-2.svg",
+    companyLogo: "/testimonials/company-2.svg",
   },
   {
+    offering: "Concierge-Led Food & Dining",
     quote:
       "Tracking invoices every month was a mess. Now, it's one single monthly invoice - faster and smoother.",
     name: "Ajay",
-    role: "Admin, KFintech",
+    designation: "Admin",
+    company: "KFintech",
+    personImage: "/testimonials/person-3.svg",
+    companyLogo: "/testimonials/company-3.svg",
   },
   {
+    offering: "Swiggy Gift Cards",
     quote:
       "When we order food for small office events, seeing the monthly limit right at checkout helps a lot.",
     name: "Admin",
-    role: "WeWork",
+    designation: "Workplace Operations",
+    company: "WeWork",
+    personImage: "/testimonials/person-4.svg",
+    companyLogo: "/testimonials/company-4.svg",
   },
 ];
 
@@ -112,60 +132,44 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <section className="relative overflow-hidden px-6 pb-20 pt-14">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-12">
-          <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr]">
-            <div className="space-y-6 text-white">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
-                Swiggy for Work
-              </p>
+      <section className="relative overflow-hidden px-6 pb-14 pt-12">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-10">
+          <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+            <div className="space-y-5 text-white">
               <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
-                Unparalleled convenience for workplace food.
+                Introducing Swiggy for Work
               </h1>
-              <p className="text-lg text-white/85">
-                Simplify food for every workplace event, from team lunches to
-                celebrations and offsites.
+              <p className="text-2xl font-semibold text-white">
+                Unparalleled convenience for workplace meals.
               </p>
-              <div className="flex flex-wrap gap-3">
-                <Link
-                  href="/#contact"
-                  className="inline-flex items-center justify-center rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white shadow-card transition hover:bg-[var(--brand-strong)]"
-                >
-                  Get in Touch
-                </Link>
-                <Link
-                  href="/#solutions"
-                  className="inline-flex items-center justify-center rounded-full border border-white/60 px-6 py-3 text-sm font-semibold text-white transition hover:border-white hover:text-white"
-                >
-                  Explore Solutions
-                </Link>
-              </div>
+              <p className="text-lg text-white/85">
+                Simplify food for every workplace moment &mdash; from team dinners at
+                restaurants and quick lunches on the go, to in-office
+                celebrations.
+              </p>
             </div>
-            <div className="relative">
-              <div className="relative h-[420px] overflow-hidden rounded-3xl border border-black/5 bg-white shadow-soft sm:h-[480px]">
+            <div className="relative lg:justify-self-end">
+              <div className="relative h-[300px] w-full max-w-md overflow-hidden rounded-3xl border border-black/5 bg-white shadow-soft sm:h-[340px]">
                 <Image
                   src={`${assetBase}/hero-banner.png`}
                   alt="Swiggy for Work team meals"
                   fill
                   priority
-                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover"
                 />
               </div>
             </div>
           </div>
-
         </div>
       </section>
 
-      <section id="solutions" className="px-6 py-20">
-        <div className="mx-auto w-full max-w-6xl space-y-10">
-          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
-                Key service offerings
-              </p>
-            </div>
+      <section id="solutions" className="px-6 py-14">
+        <div className="mx-auto w-full max-w-6xl space-y-8">
+          <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <h2 className="text-3xl font-bold text-white">
+              Key Service Offerings
+            </h2>
             <Link
               href="/#contact"
               className="inline-flex items-center gap-2 text-sm font-semibold text-white"
@@ -206,14 +210,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="why-swiggy" className="px-6 py-20">
-        <div className="mx-auto w-full max-w-6xl space-y-10">
-          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
-                Why choose Swiggy for Work
-              </p>
-            </div>
+      <section id="why-swiggy" className="px-6 py-14">
+        <div className="mx-auto w-full max-w-6xl space-y-8">
+          <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <h2 className="text-3xl font-bold text-white">
+              Why choose Swiggy for Work
+            </h2>
             <div className="rounded-full bg-white/20 px-4 py-2 text-sm font-semibold text-white">
               Trusted by HR, Admin & Finance teams
             </div>
@@ -224,7 +226,19 @@ export default function Home() {
                 key={item.title}
                 className="rounded-3xl border border-black/10 bg-white p-6 shadow-soft"
               >
-                <h3 className="text-xl font-semibold text-ink">{item.title}</h3>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-soft">
+                    <Image
+                      src={`${assetBase}${item.logo}`}
+                      alt="Swiggy logo"
+                      width={28}
+                      height={28}
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold text-ink">
+                    {item.title}
+                  </h3>
+                </div>
                 <p className="mt-3 text-sm text-slate-500">{item.description}</p>
               </div>
             ))}
@@ -232,35 +246,59 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="testimonials" className="px-6 py-20">
+      <section id="testimonials" className="px-6 py-14">
         <div className="mx-auto w-full max-w-6xl space-y-8">
           <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
-                Customer cheers
-              </p>
-            </div>
+            <h2 className="text-3xl font-bold text-white">Customer Cheers</h2>
           </div>
-          <div className="flex gap-6 overflow-x-auto pb-4 pt-2 snap-x snap-mandatory">
+          <div className="grid snap-x snap-mandatory grid-flow-col auto-cols-[85%] gap-6 overflow-x-auto pb-4 pt-2 sm:auto-cols-[65%] md:auto-cols-[50%] lg:auto-cols-[calc((100%-3rem)/3)]">
             {testimonials.map((testimonial) => (
               <article
                 key={testimonial.name}
-                className="min-w-[280px] max-w-sm flex-1 snap-start rounded-3xl border border-white/60 bg-white p-6 shadow-soft"
+                className="snap-start rounded-3xl border border-white/60 bg-white p-6 shadow-soft"
               >
                 <div className="flex items-center gap-3 text-brand">
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand-soft text-lg font-semibold text-brand">
                     &ldquo;
                   </span>
-                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                    Customer cheers
+                  <span className="text-xs font-semibold text-slate-500">
+                    {testimonial.offering}
                   </span>
                 </div>
-                <p className="mt-4 text-sm text-slate-700">
-                  &ldquo;{testimonial.quote}&rdquo;
-                </p>
-                <div className="mt-6 text-sm">
-                  <p className="font-semibold text-ink">{testimonial.name}</p>
-                  <p className="text-slate-500">{testimonial.role}</p>
+                <div className="mt-4 grid gap-4 md:grid-cols-[140px_1fr] md:items-start">
+                  <div className="relative h-[160px] w-full overflow-hidden rounded-2xl bg-slate-100">
+                    <Image
+                      src={`${assetBase}${testimonial.personImage}`}
+                      alt={`${testimonial.name} portrait`}
+                      fill
+                      sizes="(max-width: 768px) 80vw, 140px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div>
+                    <p className="text-sm text-slate-700">
+                      &ldquo;{testimonial.quote}&rdquo;
+                    </p>
+                    <div className="mt-6 flex items-center justify-between gap-4">
+                      <div className="text-sm">
+                        <p className="font-semibold text-ink">
+                          {testimonial.name}
+                        </p>
+                        <p className="text-slate-500">
+                          {testimonial.designation}
+                        </p>
+                        <p className="text-slate-500">{testimonial.company}</p>
+                      </div>
+                      <div className="flex h-10 w-16 items-center justify-center rounded-xl border border-black/10 bg-white p-2">
+                        <Image
+                          src={`${assetBase}${testimonial.companyLogo}`}
+                          alt={`${testimonial.company} logo`}
+                          width={56}
+                          height={24}
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </article>
             ))}
@@ -268,16 +306,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="px-6 pb-24 pt-20">
+      <section id="contact" className="px-6 pb-16 pt-14">
         <div className="mx-auto w-full max-w-6xl">
           <div className="grid gap-8 rounded-3xl border border-white/60 bg-white p-10 text-ink shadow-soft lg:grid-cols-[1fr_1.1fr]">
             <div className="space-y-4">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
                 Get in touch
               </p>
-              <h2 className="text-3xl font-semibold text-ink">
-                Let's plan your next workplace meal
-              </h2>
+              <h2 className="text-3xl font-semibold text-ink">Talk to Our Team</h2>
               <p className="text-slate-700">
                 Share a few details and our team will get back with the right
                 solution.
@@ -286,41 +322,8 @@ export default function Home() {
             <form className="grid gap-4 text-sm text-ink">
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="flex flex-col gap-2">
-                  <label className="font-semibold text-ink" htmlFor="role">
-                    Who are you-
-                  </label>
-                  <select
-                    id="role"
-                    name="role"
-                    className="rounded-2xl border border-black/10 bg-white px-4 py-3 text-ink"
-                  >
-                    <option>Employee</option>
-                    <option>HR</option>
-                    <option>Admin</option>
-                    <option>Finance</option>
-                    <option>Procurement</option>
-                  </select>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label className="font-semibold text-ink" htmlFor="offering">
-                    What offering are you interested in-
-                  </label>
-                  <select
-                    id="offering"
-                    name="offering"
-                    className="rounded-2xl border border-black/10 bg-white px-4 py-3 text-ink"
-                  >
-                    <option>Swiggy Corporate</option>
-                    <option>Corporate Rewards</option>
-                    <option>Concierge-Led Food & Dining</option>
-                    <option>Gift Cards</option>
-                  </select>
-                </div>
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="flex flex-col gap-2">
                   <label className="font-semibold text-ink" htmlFor="name">
-                    Name
+                    Your Name
                   </label>
                   <input
                     id="name"
@@ -330,13 +333,13 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="font-semibold text-ink" htmlFor="company">
-                    Company
+                  <label className="font-semibold text-ink" htmlFor="designation">
+                    Designation
                   </label>
                   <input
-                    id="company"
-                    name="company"
-                    placeholder="Company name"
+                    id="designation"
+                    name="designation"
+                    placeholder="Your role"
                     className="rounded-2xl border border-black/10 bg-white px-4 py-3 text-ink placeholder:text-slate-400"
                   />
                 </div>
@@ -344,7 +347,7 @@ export default function Home() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="flex flex-col gap-2">
                   <label className="font-semibold text-ink" htmlFor="email">
-                    Work email
+                    Email
                   </label>
                   <input
                     id="email"
@@ -356,7 +359,7 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col gap-2">
                   <label className="font-semibold text-ink" htmlFor="phone">
-                    Phone
+                    Mobile Number
                   </label>
                   <input
                     id="phone"
@@ -367,11 +370,37 @@ export default function Home() {
                   />
                 </div>
               </div>
+              <fieldset className="flex flex-col gap-3">
+                <legend className="font-semibold text-ink">
+                  Offering that interests you
+                </legend>
+                <div className="grid gap-2 sm:grid-cols-2">
+                  {[
+                    "Corporate Payment Solution",
+                    "Corporate Rewards",
+                    "Concierge-Led Food & Dining",
+                    "Gift Cards",
+                  ].map((offering) => (
+                    <label
+                      key={offering}
+                      className="flex items-center gap-2 rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm text-ink"
+                    >
+                      <input
+                        type="checkbox"
+                        name="offering"
+                        value={offering}
+                        className="h-4 w-4 accent-brand"
+                      />
+                      <span>{offering}</span>
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
               <button
                 type="submit"
                 className="mt-2 inline-flex items-center justify-center rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:bg-black"
               >
-                Talk to Swiggy for Work
+                Submit
               </button>
             </form>
           </div>

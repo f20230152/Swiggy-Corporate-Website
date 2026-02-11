@@ -10,19 +10,16 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
         <Link
-          href="/"
-          className="flex items-center gap-4 rounded-3xl border border-white/40 bg-white/70 px-4 py-2 text-lg text-ink shadow-soft"
+          href="https://www.swiggy.com/corporate/"
+          className="flex items-center"
         >
           <Image
             src={`${assetBase}/swiggy-logo.png`}
             alt="Swiggy"
-            width={84}
-            height={84}
+            width={120}
+            height={120}
             priority
           />
-          <span className="flex items-center text-[30px] font-bold tracking-tight text-brand">
-            Swiggy for Work
-          </span>
         </Link>
         <div className="flex items-center gap-3">
           <Link
