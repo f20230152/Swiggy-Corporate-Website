@@ -141,16 +141,18 @@ export default function CorporateWalletPage() {
               </span>
             </div>
           </div>
-          <div className="overflow-hidden rounded-3xl border border-white/25 bg-white/10 shadow-soft">
-            <Image
-              src={`${assetBase}/corporate-hero-banner.jpeg`}
-              alt="Swiggy Corporate wallet hero"
-              width={1400}
-              height={900}
-              priority
-              sizes="(max-width: 1024px) 100vw, 42vw"
-              className="h-full w-full object-cover"
-            />
+          <div className="flex justify-center lg:justify-end">
+            <div className="w-[40%] min-w-[190px] overflow-hidden rounded-3xl border border-white/25 bg-white/10 shadow-soft">
+              <Image
+                src={`${assetBase}/corporate-hero-banner.jpeg`}
+                alt="Swiggy Corporate wallet hero"
+                width={1400}
+                height={900}
+                priority
+                sizes="(max-width: 640px) 70vw, (max-width: 1024px) 45vw, 18vw"
+                className="h-full w-full object-cover"
+              />
+            </div>
           </div>
         </div>
 
