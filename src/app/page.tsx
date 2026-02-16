@@ -72,7 +72,7 @@ const testimonials = [
     name: "Jay",
     designation: "Sr. Business Development Manager",
     company: "MakeMyTrip",
-    personImage: "/testimonials/photo-1.png",
+    personImage: "",
     companyLogo: "/testimonials/4.png",
   },
   {
@@ -155,7 +155,7 @@ export default function Home() {
             <div className="relative lg:justify-self-end">
               <div className="relative h-[300px] w-full max-w-md overflow-hidden rounded-3xl border border-black/5 bg-white shadow-soft sm:h-[340px]">
                 <Image
-                  src={`${assetBase}/hero-banner.png`}
+                  src={`${assetBase}/table-swiggy-rotated-right.png`}
                   alt="Swiggy for Work team meals"
                   fill
                   priority
@@ -257,52 +257,63 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-white">Customer Cheers</h2>
           </div>
           <div className="grid snap-x snap-mandatory grid-flow-col auto-cols-[85%] gap-6 overflow-x-auto pb-4 pt-2 sm:auto-cols-[65%] md:auto-cols-[50%] lg:auto-cols-[calc((100%-3rem)/3)]">
-            {testimonials.map((testimonial) => (
-              <article
-                key={testimonial.name}
-                className="snap-start rounded-3xl border border-white/60 bg-white p-6 shadow-soft"
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <span className="inline-flex rounded-full bg-brand-soft px-4 py-1.5 text-xs font-semibold text-brand">
-                    {testimonial.offering}
-                  </span>
-                  <div className="flex items-center justify-end">
-                    <Image
-                      src={`${assetBase}${testimonial.companyLogo}`}
-                      alt={`${testimonial.company} logo`}
-                      width={77}
-                      height={34}
-                      className="h-[34px] w-auto object-contain"
-                    />
-                  </div>
-                </div>
-                <div className="mt-4 grid gap-4 md:grid-cols-[140px_1fr] md:items-start">
-                  <div className="relative h-[160px] w-full overflow-hidden rounded-2xl bg-slate-100">
-                    <Image
-                      src={`${assetBase}${testimonial.personImage}`}
-                      alt={`${testimonial.name} portrait`}
-                      fill
-                      sizes="(max-width: 768px) 80vw, 140px"
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <p className="text-sm text-slate-700">
-                      &ldquo;{testimonial.quote}&rdquo;
-                    </p>
-                    <div className="mt-6 text-sm">
-                      <p className="font-semibold text-ink">
-                        {testimonial.name}
-                      </p>
-                      <p className="text-slate-500">
-                        {testimonial.designation}
-                      </p>
-                      <p className="text-slate-500">{testimonial.company}</p>
+            {testimonials.map((testimonial) => {
+              const hasPersonImage = Boolean(testimonial.personImage);
+              return (
+                <article
+                  key={testimonial.name}
+                  className="snap-start rounded-3xl border border-white/60 bg-white p-6 shadow-soft"
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <span className="inline-flex rounded-full bg-brand-soft px-4 py-1.5 text-xs font-semibold text-brand">
+                      {testimonial.offering}
+                    </span>
+                    <div className="flex items-center justify-end">
+                      <Image
+                        src={`${assetBase}${testimonial.companyLogo}`}
+                        alt={`${testimonial.company} logo`}
+                        width={77}
+                        height={34}
+                        className="h-[34px] w-auto object-contain"
+                      />
                     </div>
                   </div>
-                </div>
-              </article>
-            ))}
+                  <div
+                    className={
+                      hasPersonImage
+                        ? "mt-4 grid gap-4 md:grid-cols-[140px_1fr] md:items-start"
+                        : "mt-4"
+                    }
+                  >
+                    {hasPersonImage ? (
+                      <div className="relative h-[160px] w-full overflow-hidden rounded-2xl bg-slate-100">
+                        <Image
+                          src={`${assetBase}${testimonial.personImage}`}
+                          alt={`${testimonial.name} portrait`}
+                          fill
+                          sizes="(max-width: 768px) 80vw, 140px"
+                          className="object-cover"
+                        />
+                      </div>
+                    ) : null}
+                    <div>
+                      <p className="text-sm text-slate-700">
+                        &ldquo;{testimonial.quote}&rdquo;
+                      </p>
+                      <div className="mt-6 text-sm">
+                        <p className="font-semibold text-ink">
+                          {testimonial.name}
+                        </p>
+                        <p className="text-slate-500">
+                          {testimonial.designation}
+                        </p>
+                        <p className="text-slate-500">{testimonial.company}</p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
