@@ -266,13 +266,13 @@ export default function Home() {
                   <span className="inline-flex rounded-full bg-brand-soft px-4 py-1.5 text-xs font-semibold text-brand">
                     {testimonial.offering}
                   </span>
-                  <div className="flex h-14 w-28 items-center justify-center rounded-xl border border-black/10 bg-white p-2">
+                  <div className="flex items-center justify-end">
                     <Image
                       src={`${assetBase}${testimonial.companyLogo}`}
                       alt={`${testimonial.company} logo`}
-                      width={96}
-                      height={40}
-                      className="h-auto w-full object-contain"
+                      width={64}
+                      height={28}
+                      className="h-7 w-auto object-contain"
                     />
                   </div>
                 </div>
