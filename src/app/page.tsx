@@ -72,7 +72,6 @@ const testimonials = [
     name: "Jay",
     designation: "Sr. Business Development Manager",
     company: "MakeMyTrip",
-    personImage: "",
     companyLogo: "/testimonials/4.png",
   },
   {
@@ -82,7 +81,6 @@ const testimonials = [
     name: "Piyush",
     designation: "Business Development Manager",
     company: "MakeMyTrip",
-    personImage: "/testimonials/person-2.svg",
     companyLogo: "/testimonials/4.png",
   },
   {
@@ -92,7 +90,6 @@ const testimonials = [
     name: "Ajay",
     designation: "Admin",
     company: "KFintech",
-    personImage: "/testimonials/person-3.svg",
     companyLogo: "/testimonials/5.png",
   },
   {
@@ -102,7 +99,6 @@ const testimonials = [
     name: "Admin",
     designation: "Workplace Operations",
     company: "WeWork",
-    personImage: "/testimonials/person-4.svg",
     companyLogo: "/testimonials/6.png",
   },
 ];
@@ -153,14 +149,14 @@ export default function Home() {
               </p>
             </div>
             <div className="relative lg:justify-self-end">
-              <div className="relative h-[300px] w-full max-w-md overflow-hidden rounded-3xl border border-black/5 bg-white shadow-soft sm:h-[340px]">
+              <div className="relative h-[300px] w-full max-w-md overflow-hidden rounded-3xl sm:h-[340px]">
                 <Image
-                  src={`${assetBase}/table-swiggy-rotated-right.png`}
+                  src={`${assetBase}/table-swiggy.png`}
                   alt="Swiggy for Work team meals"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover"
+                  className="object-contain rotate-90 scale-[0.9]"
                 />
               </div>
             </div>
@@ -257,9 +253,7 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-white">Customer Cheers</h2>
           </div>
           <div className="grid snap-x snap-mandatory grid-flow-col auto-cols-[85%] gap-6 overflow-x-auto pb-4 pt-2 sm:auto-cols-[65%] md:auto-cols-[50%] lg:auto-cols-[calc((100%-3rem)/3)]">
-            {testimonials.map((testimonial) => {
-              const hasPersonImage = Boolean(testimonial.personImage);
-              return (
+            {testimonials.map((testimonial) => (
                 <article
                   key={testimonial.name}
                   className="snap-start rounded-3xl border border-white/60 bg-white p-6 shadow-soft"
@@ -278,24 +272,7 @@ export default function Home() {
                       />
                     </div>
                   </div>
-                  <div
-                    className={
-                      hasPersonImage
-                        ? "mt-4 grid gap-4 md:grid-cols-[140px_1fr] md:items-start"
-                        : "mt-4"
-                    }
-                  >
-                    {hasPersonImage ? (
-                      <div className="relative h-[160px] w-full overflow-hidden rounded-2xl bg-slate-100">
-                        <Image
-                          src={`${assetBase}${testimonial.personImage}`}
-                          alt={`${testimonial.name} portrait`}
-                          fill
-                          sizes="(max-width: 768px) 80vw, 140px"
-                          className="object-cover"
-                        />
-                      </div>
-                    ) : null}
+                  <div className="mt-4">
                     <div>
                       <p className="text-sm text-slate-700">
                         &ldquo;{testimonial.quote}&rdquo;
@@ -312,8 +289,7 @@ export default function Home() {
                     </div>
                   </div>
                 </article>
-              );
-            })}
+            ))}
           </div>
         </div>
       </section>
