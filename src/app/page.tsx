@@ -1,24 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
+import type { ComponentType } from "react";
 import {
   ChevronRight,
   ConciergeIcon,
+  ExpertiseIcon,
   GiftIcon,
+  NetworkIcon,
   RewardsIcon,
+  SimplicityIcon,
   WalletIcon,
 } from "@/components/icons";
-import {
-  CheckCircle2,
-  Clock3,
-  Hand,
-  MapPin,
-  Pizza,
-  Smartphone,
-  Soup,
-  UtensilsCrossed,
-  Zap,
-} from "lucide-react";
 
 const solutions = [
   {
@@ -50,30 +43,28 @@ const solutions = [
   },
 ];
 
-type WhySwiggyIconVariant = "expertise" | "network" | "simplicity";
-
 const whySwiggy: Array<{
   title: string;
   description: string;
-  iconVariant: WhySwiggyIconVariant;
+  icon: ComponentType<{ className?: string }>;
 }> = [
   {
     title: "Long Standing Expertise",
     description:
       "10+ years pioneering food delivery - a trusted, category-defining brand embedded in daily Indian life.",
-    iconVariant: "expertise",
+    icon: ExpertiseIcon,
   },
   {
     title: "Vast Restaurant Network",
     description:
       "A wide choice that delights, without the hassle of coordinating with multiple restaurants or dealing with inconsistent experiences.",
-    iconVariant: "network",
+    icon: NetworkIcon,
   },
   {
     title: "Effortlessly Simple",
     description:
       "Fast onboarding with seamless ordering, billing, and support - adding meaningful value to your everyday food needs.",
-    iconVariant: "simplicity",
+    icon: SimplicityIcon,
   },
 ];
 
@@ -119,45 +110,6 @@ const testimonials = [
     companyLogo: "/testimonials/company-4.svg",
   },
 ];
-
-function WhySwiggyGraphic({ variant }: { variant: WhySwiggyIconVariant }) {
-  const tone = "text-[#C1643A]";
-
-  if (variant === "expertise") {
-    return (
-      <div className="relative h-28 w-28">
-        <Clock3 className={`absolute left-3 top-4 h-16 w-16 ${tone}`} strokeWidth={2} />
-        <span className="absolute right-2 top-1 text-3xl font-semibold leading-none text-[#C1643A]">
-          10+
-        </span>
-        <CheckCircle2
-          className={`absolute bottom-2 right-2 h-9 w-9 ${tone}`}
-          strokeWidth={2}
-        />
-      </div>
-    );
-  }
-
-  if (variant === "network") {
-    return (
-      <div className="relative h-28 w-28">
-        <MapPin className={`absolute left-8 top-8 h-12 w-12 ${tone}`} strokeWidth={2} />
-        <UtensilsCrossed className={`absolute left-1 top-3 h-7 w-7 ${tone}`} strokeWidth={2} />
-        <Pizza className={`absolute right-0 top-4 h-7 w-7 ${tone}`} strokeWidth={2} />
-        <Soup className={`absolute bottom-2 left-3 h-7 w-7 ${tone}`} strokeWidth={2} />
-        <Soup className={`absolute bottom-0 right-2 h-7 w-7 ${tone}`} strokeWidth={2} />
-      </div>
-    );
-  }
-
-  return (
-    <div className="relative h-28 w-28">
-      <Zap className={`absolute left-1 top-8 h-12 w-12 ${tone}`} strokeWidth={2} />
-      <Smartphone className={`absolute right-1 top-5 h-16 w-16 ${tone}`} strokeWidth={2} />
-      <Hand className={`absolute right-0 top-14 h-10 w-10 ${tone}`} strokeWidth={2} />
-    </div>
-  );
-}
 
 export default function Home() {
   const assetBase = process.env.NEXT_PUBLIC_BASE_PATH
@@ -275,13 +227,15 @@ export default function Home() {
           </div>
           <div className="relative overflow-hidden rounded-[32px] bg-[linear-gradient(180deg,#D96531_0%,#CC5723_100%)] p-5 sm:p-7 lg:p-8">
             <div className="grid gap-6 md:grid-cols-3">
-              {whySwiggy.map((item) => (
+              {whySwiggy.map((item) => {
+                const Icon = item.icon;
+                return (
                 <div
                   key={item.title}
                   className="rounded-[28px] bg-white px-7 py-9 text-center shadow-[0_8px_22px_rgba(0,0,0,0.16)]"
                 >
                   <div className="mx-auto flex h-40 w-40 items-center justify-center rounded-full bg-[#F8E5D8]">
-                    <WhySwiggyGraphic variant={item.iconVariant} />
+                    <Icon className="h-28 w-28 text-[#C1643A]" />
                   </div>
                   <h3 className="mt-6 text-[2.05rem] font-semibold leading-[1.15] text-[#151515]">
                     {item.title}
@@ -290,7 +244,8 @@ export default function Home() {
                     {item.description}
                   </p>
                 </div>
-              ))}
+              );
+              })}
             </div>
             <svg
               aria-hidden="true"
