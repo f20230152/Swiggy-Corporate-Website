@@ -93,7 +93,7 @@ const testimonials = [
     designation: "Admin",
     company: "KFintech",
     personImage: "/testimonials/person-3.svg",
-    companyLogo: "/testimonials/company-3.svg",
+    companyLogo: "/testimonials/5.png",
   },
   {
     offering: "Gift Cards",
@@ -103,7 +103,7 @@ const testimonials = [
     designation: "Workplace Operations",
     company: "WeWork",
     personImage: "/testimonials/person-4.svg",
-    companyLogo: "/testimonials/company-4.svg",
+    companyLogo: "/testimonials/6.png",
   },
 ];
 
@@ -270,9 +270,9 @@ export default function Home() {
                     <Image
                       src={`${assetBase}${testimonial.companyLogo}`}
                       alt={`${testimonial.company} logo`}
-                      width={64}
-                      height={28}
-                      className="h-7 w-auto object-contain"
+                      width={77}
+                      height={34}
+                      className="h-[34px] w-auto object-contain"
                     />
                   </div>
                 </div>
