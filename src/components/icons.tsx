@@ -190,3 +190,149 @@ export function ChevronRight({ className }: IconProps) {
     </svg>
   );
 }
+
+export function DiningIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className={className}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <g stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M5 3v8" />
+        <path d="M8 3v8" />
+        <path d="M5 7h3" />
+        <path d="M6.5 11v10" />
+        <path d="M14 3c2 2.5 2 6.5 0 9v9" />
+      </g>
+    </svg>
+  );
+}
+
+export function OfficeMealIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className={className}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <g stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="4" y="5" width="8" height="14" rx="1.5" />
+        <path d="M6 9h2M10 9h0M6 12h2M10 12h0M6 15h2M10 15h0" />
+        <path d="M15 5v14M18 5v14M15 10h3" />
+      </g>
+    </svg>
+  );
+}
+
+export function TravelMealIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className={className}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <g stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="4" y="6" width="16" height="12" rx="2" />
+        <path d="M9 6V4h6v2" />
+        <path d="M4 12h16" />
+        <circle cx="9" cy="12" r="0.8" fill="currentColor" />
+        <circle cx="15" cy="12" r="0.8" fill="currentColor" />
+      </g>
+    </svg>
+  );
+}
+
+export function LateNightIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className={className}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <g stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14.5 4.5a7 7 0 1 0 5 11.5 6 6 0 1 1-5-11.5Z" />
+        <path d="m18.5 4 0.6 1.3L20.5 6l-1.4 0.7-0.6 1.3-0.6-1.3L16.5 6l1.4-0.7 0.6-1.3Z" />
+      </g>
+    </svg>
+  );
+}
+
+export function TeamDinnerIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className={className}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <g stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="8" cy="8" r="2.5" />
+        <circle cx="16" cy="8" r="2.5" />
+        <path d="M4.5 18a3.5 3.5 0 0 1 7 0M12.5 18a3.5 3.5 0 0 1 7 0" />
+      </g>
+    </svg>
+  );
+}
+
+export function MeetingsIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className={className}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <g stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4 6h16v10H9l-4 3V6Z" />
+        <path d="M8 11h3M13 11h3" />
+      </g>
+    </svg>
+  );
+}
+
+export function TrainingIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className={className}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <g stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="m3 9 9-4 9 4-9 4-9-4Z" />
+        <path d="M7 10.5V14c0 1.7 2.2 3 5 3s5-1.3 5-3v-3.5" />
+        <path d="M21 9v5" />
+      </g>
+    </svg>
+  );
+}
+
+export function CelebrationIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className={className}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <g stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M6 18 10.5 7.5 16.5 13.5 6 18Z" />
+        <path d="m10.5 7.5 3 3" />
+        <path d="M17 4v2M20 7h-2M15.5 8.5 14 10" />
+      </g>
+    </svg>
+  );
+}

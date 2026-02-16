@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
 import CtaBand from "@/components/cta-band";
-import { WalletIcon } from "@/components/icons";
+import {
+  CelebrationIcon,
+  DiningIcon,
+  LateNightIcon,
+  MeetingsIcon,
+  OfficeMealIcon,
+  TeamDinnerIcon,
+  TrainingIcon,
+  TravelMealIcon,
+  WalletIcon,
+} from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Swiggy Corporate",
@@ -35,15 +45,27 @@ const platformBlocks = [
   },
 ];
 
-const useCases = [
-  "Dining out at restaurants",
-  "Food ordering in office",
-  "Meals at hotels while travelling",
-  "Late night meals at office",
-  "Team dinners at restaurants",
-  "Client and team meetings",
-  "Hiring drives and trainings",
-  "Celebrations and town halls",
+const useCaseColumns = [
+  {
+    title: "Dining & travel",
+    icon: DiningIcon,
+    items: [
+      { label: "Dining out at restaurants", icon: DiningIcon },
+      { label: "Meals at hotels while travelling", icon: TravelMealIcon },
+      { label: "Team dinners at restaurants", icon: TeamDinnerIcon },
+      { label: "Hiring drives and trainings", icon: TrainingIcon },
+    ],
+  },
+  {
+    title: "Office & team events",
+    icon: OfficeMealIcon,
+    items: [
+      { label: "Food ordering in office", icon: OfficeMealIcon },
+      { label: "Late night meals at office", icon: LateNightIcon },
+      { label: "Client and team meetings", icon: MeetingsIcon },
+      { label: "Celebrations and town halls", icon: CelebrationIcon },
+    ],
+  },
 ];
 
 const audienceBenefits = [
@@ -144,15 +166,41 @@ export default function CorporateWalletPage() {
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
             Use cases
           </p>
-          <div className="mt-4 grid gap-3 text-sm text-slate-500 sm:grid-cols-2">
-            {useCases.map((useCase) => (
-              <div
-                key={useCase}
-                className="rounded-2xl border border-black/5 bg-surface-muted px-4 py-3"
-              >
-                {useCase}
-              </div>
-            ))}
+          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            {useCaseColumns.map((column) => {
+              const ColumnIcon = column.icon;
+              return (
+                <div
+                  key={column.title}
+                  className="rounded-2xl border border-black/5 bg-surface-muted/70 p-3"
+                >
+                  <div className="mb-3 flex items-center gap-2 px-1">
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-brand-soft text-brand">
+                      <ColumnIcon className="h-4 w-4" />
+                    </span>
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-700">
+                      {column.title}
+                    </p>
+                  </div>
+                  <div className="space-y-3 text-sm text-slate-600">
+                    {column.items.map((item) => {
+                      const ItemIcon = item.icon;
+                      return (
+                        <div
+                          key={item.label}
+                          className="flex items-center gap-3 rounded-2xl border border-black/5 bg-white px-3 py-2.5"
+                        >
+                          <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-brand-soft text-brand">
+                            <ItemIcon className="h-4 w-4" />
+                          </span>
+                          <span>{item.label}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
