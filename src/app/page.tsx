@@ -1,15 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
-import type { ComponentType } from "react";
 import {
   ChevronRight,
   ConciergeIcon,
-  ExpertiseIcon,
   GiftIcon,
-  NetworkIcon,
   RewardsIcon,
-  SimplicityIcon,
   WalletIcon,
 } from "@/components/icons";
 
@@ -46,25 +42,25 @@ const solutions = [
 const whySwiggy: Array<{
   title: string;
   description: string;
-  icon: ComponentType<{ className?: string }>;
+  imageSrc: string;
 }> = [
   {
     title: "Long Standing Expertise",
     description:
       "10+ years pioneering food delivery - a trusted, category-defining brand embedded in daily Indian life.",
-    icon: ExpertiseIcon,
+    imageSrc: "/why-swiggy/1.png",
   },
   {
     title: "Vast Restaurant Network",
     description:
       "A wide choice that delights, without the hassle of coordinating with multiple restaurants or dealing with inconsistent experiences.",
-    icon: NetworkIcon,
+    imageSrc: "/why-swiggy/2.png",
   },
   {
     title: "Effortlessly Simple",
     description:
       "Fast onboarding with seamless ordering, billing, and support - adding meaningful value to your everyday food needs.",
-    icon: SimplicityIcon,
+    imageSrc: "/why-swiggy/3.png",
   },
 ];
 
@@ -219,41 +215,38 @@ export default function Home() {
       </section>
 
       <section id="why-swiggy" className="px-6 py-14">
-        <div className="mx-auto w-full max-w-6xl space-y-6">
-          <div className="flex flex-col gap-3">
+        <div className="mx-auto w-full max-w-6xl space-y-8">
+          <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <h2 className="text-3xl font-bold text-white">
               Why choose Swiggy for Work
             </h2>
+            <div className="rounded-full bg-white/20 px-4 py-2 text-sm font-semibold text-white">
+              Trusted by HR, Admin & Finance teams
+            </div>
           </div>
-          <div className="relative overflow-hidden rounded-[32px] bg-[linear-gradient(180deg,#D96531_0%,#CC5723_100%)] p-5 sm:p-7 lg:p-8">
-            <div className="grid gap-6 md:grid-cols-3">
-              {whySwiggy.map((item) => {
-                const Icon = item.icon;
-                return (
+          <div className="grid gap-6 md:grid-cols-3">
+            {whySwiggy.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-[28px] bg-white px-7 py-9 text-center shadow-[0_8px_22px_rgba(0,0,0,0.16)]"
+                  className="rounded-3xl border border-black/10 bg-white p-6 text-center shadow-soft"
                 >
-                  <div className="mx-auto flex h-40 w-40 items-center justify-center rounded-full bg-[#F8E5D8]">
-                    <Icon className="h-28 w-28 text-[#C1643A]" />
+                  <div className="mx-auto">
+                    <Image
+                      src={`${assetBase}${item.imageSrc}`}
+                      alt={item.title}
+                      width={150}
+                      height={150}
+                      className="mx-auto h-[150px] w-[150px] object-contain"
+                    />
                   </div>
-                  <h3 className="mt-6 text-[2.05rem] font-semibold leading-[1.15] text-[#151515]">
+                  <h3 className="mt-4 text-2xl font-semibold text-ink">
                     {item.title}
                   </h3>
-                  <p className="mt-4 text-[1.12rem] leading-[1.45] text-[#191919]/85">
+                  <p className="mt-3 text-base leading-relaxed text-slate-600">
                     {item.description}
                   </p>
                 </div>
-              );
-              })}
-            </div>
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 24 24"
-              className="pointer-events-none absolute bottom-4 right-4 h-8 w-8 fill-[#F6D7C4]"
-            >
-              <path d="M12 2 14.7 9.3 22 12l-7.3 2.7L12 22l-2.7-7.3L2 12l7.3-2.7L12 2Z" />
-            </svg>
+              ))}
           </div>
         </div>
       </section>
