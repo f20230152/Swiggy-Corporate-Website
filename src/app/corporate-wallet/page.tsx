@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import CtaBand from "@/components/cta-band";
 import {
   CelebrationIcon,
@@ -9,7 +10,6 @@ import {
   TeamDinnerIcon,
   TrainingIcon,
   TravelMealIcon,
-  WalletIcon,
 } from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -108,6 +108,10 @@ const flow = [
 ];
 
 export default function CorporateWalletPage() {
+  const assetBase = process.env.NEXT_PUBLIC_BASE_PATH
+    ? `/${process.env.NEXT_PUBLIC_BASE_PATH.replace(/^\/+|\/+$/g, "")}`
+    : "";
+
   return (
     <div className="px-6 py-14">
       <section className="mx-auto w-full max-w-6xl space-y-10">
@@ -137,28 +141,16 @@ export default function CorporateWalletPage() {
               </span>
             </div>
           </div>
-          <div className="rounded-3xl border border-white/25 bg-white/10 p-6 text-white shadow-soft">
-            <div className="flex items-center gap-4">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15 text-white">
-                <WalletIcon className="h-6 w-6" />
-              </span>
-              <div>
-                <p className="text-sm font-semibold text-white">
-                  Spend visibility in real time
-                </p>
-                <p className="text-sm text-white/75">
-                  Instant snapshots by team, project, or travel code.
-                </p>
-              </div>
-            </div>
-            <div className="mt-6 space-y-3 rounded-2xl border border-white/20 bg-white/10 p-4 text-sm text-white/85">
-              <p className="font-semibold text-white">Policy highlights</p>
-              <ul className="space-y-2">
-                <li>Daily wallet limits auto-applied</li>
-                <li>Multi-level approvals built-in</li>
-                <li>Centralized invoice repository</li>
-              </ul>
-            </div>
+          <div className="overflow-hidden rounded-3xl border border-white/25 bg-white/10 shadow-soft">
+            <Image
+              src={`${assetBase}/corporate-hero-banner.jpeg`}
+              alt="Swiggy Corporate wallet hero"
+              width={1400}
+              height={900}
+              priority
+              sizes="(max-width: 1024px) 100vw, 42vw"
+              className="h-full w-full object-cover"
+            />
           </div>
         </div>
 
