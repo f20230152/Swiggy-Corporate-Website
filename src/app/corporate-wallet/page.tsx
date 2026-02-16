@@ -141,7 +141,7 @@ export default function CorporateWalletPage() {
               </span>
             </div>
           </div>
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex justify-start">
             <div className="w-[40%] min-w-[190px] overflow-hidden rounded-3xl border border-white/25 bg-white/10 shadow-soft">
               <Image
                 src={`${assetBase}/corporate-hero-banner.jpeg`}
