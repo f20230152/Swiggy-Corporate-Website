@@ -73,7 +73,7 @@ const testimonials = [
     designation: "Sr. Business Development Manager",
     company: "MakeMyTrip",
     personImage: "/testimonials/photo-1.png",
-    companyLogo: "/testimonials/company-1.svg",
+    companyLogo: "/testimonials/4.png",
   },
   {
     offering: "Corporate Rewards",
@@ -83,7 +83,7 @@ const testimonials = [
     designation: "Business Development Manager",
     company: "MakeMyTrip",
     personImage: "/testimonials/person-2.svg",
-    companyLogo: "/testimonials/company-2.svg",
+    companyLogo: "/testimonials/4.png",
   },
   {
     offering: "Concierge Dining",
