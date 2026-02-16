@@ -157,7 +157,7 @@ export default function Home() {
                   height={1024}
                   priority
                   sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="h-full w-auto rotate-90 object-contain"
+                  className="h-full w-full object-contain"
                 />
               </div>
             </div>
