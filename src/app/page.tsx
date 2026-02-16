@@ -4,8 +4,11 @@ import Script from "next/script";
 import {
   ChevronRight,
   ConciergeIcon,
+  ExpertiseIcon,
   GiftIcon,
+  NetworkIcon,
   RewardsIcon,
+  SimplicityIcon,
   WalletIcon,
 } from "@/components/icons";
 
@@ -44,31 +47,31 @@ const whySwiggy = [
     title: "Long Standing Expertise",
     description:
       "10+ years pioneering food delivery - a trusted, category-defining brand embedded in daily Indian life.",
-    logo: "/swiggy-logo.png",
+    icon: ExpertiseIcon,
   },
   {
     title: "Vast Restaurant Network",
     description:
       "A wide choice that delights, without the hassle of coordinating with multiple restaurants or dealing with inconsistent experiences.",
-    logo: "/swiggy-logo.png",
+    icon: NetworkIcon,
   },
   {
     title: "Effortlessly Simple",
     description:
       "Fast onboarding with seamless ordering, billing, and support - adding meaningful value to your everyday food needs.",
-    logo: "/swiggy-logo.png",
+    icon: SimplicityIcon,
   },
 ];
 
 const testimonials = [
   {
-    offering: "Corporate Payment Solution",
+    offering: "Corporate Wallet",
     quote:
       "The main issue for me was the anxiety around credit card bill dues because of the reimbursement process. That's gone now.",
     name: "Jay",
     designation: "Sr. Business Development Manager",
     company: "MakeMyTrip",
-    personImage: "/testimonials/person-1.svg",
+    personImage: "/testimonials/photo-1.png",
     companyLogo: "/testimonials/company-1.svg",
   },
   {
@@ -82,7 +85,7 @@ const testimonials = [
     companyLogo: "/testimonials/company-2.svg",
   },
   {
-    offering: "Concierge-Led Food & Dining",
+    offering: "Concierge Dining",
     quote:
       "Tracking invoices every month was a mess. Now, it's one single monthly invoice - faster and smoother.",
     name: "Ajay",
@@ -92,7 +95,7 @@ const testimonials = [
     companyLogo: "/testimonials/company-3.svg",
   },
   {
-    offering: "Swiggy Gift Cards",
+    offering: "Gift Cards",
     quote:
       "When we order food for small office events, seeing the monthly limit right at checkout helps a lot.",
     name: "Admin",
@@ -184,9 +187,9 @@ export default function Home() {
                 <Link
                   key={solution.title}
                   href={solution.href}
-                  className="group rounded-3xl border border-black/10 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:border-[rgba(237,82,15,0.6)]"
+                  className="group flex h-full flex-col rounded-3xl border border-black/10 bg-white p-6 shadow-soft transition hover:-translate-y-1 hover:border-[rgba(237,82,15,0.6)]"
                 >
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-start gap-4">
                     <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-soft text-brand">
                       <Icon className="h-6 w-6" />
                     </span>
@@ -199,9 +202,9 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-                  <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-ink">
+                  <div className="mt-auto flex items-center gap-2 pt-6 text-sm font-semibold text-ink">
                     Explore offering
-                    <ChevronRight className="h-4 w-4 text-brand transition group-hover:translate-x-1" />
+                    <ChevronRight className="h-4 w-4 text-brand" />
                   </div>
                 </Link>
               );
@@ -221,27 +224,23 @@ export default function Home() {
             </div>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
-            {whySwiggy.map((item) => (
+            {whySwiggy.map((item) => {
+              const Icon = item.icon;
+              return (
               <div
                 key={item.title}
-                className="rounded-3xl border border-black/10 bg-white p-6 shadow-soft"
+                className="rounded-3xl border border-black/10 bg-white p-6 text-center shadow-soft"
               >
-                <div className="flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-soft">
-                    <Image
-                      src={`${assetBase}${item.logo}`}
-                      alt="Swiggy logo"
-                      width={28}
-                      height={28}
-                    />
-                  </div>
-                  <h3 className="text-xl font-semibold text-ink">
-                    {item.title}
-                  </h3>
+                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-brand-soft text-brand">
+                  <Icon className="h-10 w-10" />
                 </div>
+                <h3 className="mt-4 text-xl font-semibold text-ink">
+                  {item.title}
+                </h3>
                 <p className="mt-3 text-sm text-slate-500">{item.description}</p>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -257,13 +256,19 @@ export default function Home() {
                 key={testimonial.name}
                 className="snap-start rounded-3xl border border-white/60 bg-white p-6 shadow-soft"
               >
-                <div className="flex items-center gap-3 text-brand">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand-soft text-lg font-semibold text-brand">
-                    &ldquo;
-                  </span>
-                  <span className="text-xs font-semibold text-slate-500">
+                <div className="flex items-start justify-between gap-3">
+                  <span className="inline-flex rounded-full bg-brand-soft px-4 py-1.5 text-xs font-semibold text-brand">
                     {testimonial.offering}
                   </span>
+                  <div className="flex h-14 w-28 items-center justify-center rounded-xl border border-black/10 bg-white p-2">
+                    <Image
+                      src={`${assetBase}${testimonial.companyLogo}`}
+                      alt={`${testimonial.company} logo`}
+                      width={96}
+                      height={40}
+                      className="h-auto w-full object-contain"
+                    />
+                  </div>
                 </div>
                 <div className="mt-4 grid gap-4 md:grid-cols-[140px_1fr] md:items-start">
                   <div className="relative h-[160px] w-full overflow-hidden rounded-2xl bg-slate-100">
@@ -279,24 +284,14 @@ export default function Home() {
                     <p className="text-sm text-slate-700">
                       &ldquo;{testimonial.quote}&rdquo;
                     </p>
-                    <div className="mt-6 flex items-center justify-between gap-4">
-                      <div className="text-sm">
-                        <p className="font-semibold text-ink">
-                          {testimonial.name}
-                        </p>
-                        <p className="text-slate-500">
-                          {testimonial.designation}
-                        </p>
-                        <p className="text-slate-500">{testimonial.company}</p>
-                      </div>
-                      <div className="flex h-10 w-16 items-center justify-center rounded-xl border border-black/10 bg-white p-2">
-                        <Image
-                          src={`${assetBase}${testimonial.companyLogo}`}
-                          alt={`${testimonial.company} logo`}
-                          width={56}
-                          height={24}
-                        />
-                      </div>
+                    <div className="mt-6 text-sm">
+                      <p className="font-semibold text-ink">
+                        {testimonial.name}
+                      </p>
+                      <p className="text-slate-500">
+                        {testimonial.designation}
+                      </p>
+                      <p className="text-slate-500">{testimonial.company}</p>
                     </div>
                   </div>
                 </div>
@@ -313,10 +308,10 @@ export default function Home() {
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
                 Get in touch
               </p>
-              <h2 className="text-3xl font-semibold text-ink">Talk to Our Team</h2>
+              <h2 className="text-3xl font-semibold text-ink">Talk to our team</h2>
               <p className="text-slate-700">
-                Share a few details and our team will get back with the right
-                solution.
+                Looking for more info? Share your details and our team will get
+                in touch.
               </p>
             </div>
             <form className="grid gap-4 text-sm text-ink">
