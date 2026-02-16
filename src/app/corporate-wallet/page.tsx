@@ -144,7 +144,7 @@ export default function CorporateWalletPage() {
           <div className="flex justify-start">
             <div className="w-[40%] min-w-[190px] overflow-hidden rounded-3xl border border-white/25 bg-white/10 shadow-soft">
               <Image
-                src={`${assetBase}/corporate-hero-banner.jpeg`}
+                src={`${assetBase}/corporate-hero-banner.jpeg?v=20260216-2232`}
                 alt="Swiggy Corporate wallet hero"
                 width={1400}
                 height={900}
