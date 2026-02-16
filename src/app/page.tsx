@@ -4,13 +4,21 @@ import Script from "next/script";
 import {
   ChevronRight,
   ConciergeIcon,
-  ExpertiseIcon,
   GiftIcon,
-  NetworkIcon,
   RewardsIcon,
-  SimplicityIcon,
   WalletIcon,
 } from "@/components/icons";
+import {
+  CheckCircle2,
+  Clock3,
+  Hand,
+  MapPin,
+  Pizza,
+  Smartphone,
+  Soup,
+  UtensilsCrossed,
+  Zap,
+} from "lucide-react";
 
 const solutions = [
   {
@@ -42,24 +50,30 @@ const solutions = [
   },
 ];
 
-const whySwiggy = [
+type WhySwiggyIconVariant = "expertise" | "network" | "simplicity";
+
+const whySwiggy: Array<{
+  title: string;
+  description: string;
+  iconVariant: WhySwiggyIconVariant;
+}> = [
   {
     title: "Long Standing Expertise",
     description:
       "10+ years pioneering food delivery - a trusted, category-defining brand embedded in daily Indian life.",
-    icon: ExpertiseIcon,
+    iconVariant: "expertise",
   },
   {
     title: "Vast Restaurant Network",
     description:
       "A wide choice that delights, without the hassle of coordinating with multiple restaurants or dealing with inconsistent experiences.",
-    icon: NetworkIcon,
+    iconVariant: "network",
   },
   {
     title: "Effortlessly Simple",
     description:
       "Fast onboarding with seamless ordering, billing, and support - adding meaningful value to your everyday food needs.",
-    icon: SimplicityIcon,
+    iconVariant: "simplicity",
   },
 ];
 
@@ -105,6 +119,45 @@ const testimonials = [
     companyLogo: "/testimonials/company-4.svg",
   },
 ];
+
+function WhySwiggyGraphic({ variant }: { variant: WhySwiggyIconVariant }) {
+  const tone = "text-[#C1643A]";
+
+  if (variant === "expertise") {
+    return (
+      <div className="relative h-28 w-28">
+        <Clock3 className={`absolute left-3 top-4 h-16 w-16 ${tone}`} strokeWidth={2} />
+        <span className="absolute right-2 top-1 text-3xl font-semibold leading-none text-[#C1643A]">
+          10+
+        </span>
+        <CheckCircle2
+          className={`absolute bottom-2 right-2 h-9 w-9 ${tone}`}
+          strokeWidth={2}
+        />
+      </div>
+    );
+  }
+
+  if (variant === "network") {
+    return (
+      <div className="relative h-28 w-28">
+        <MapPin className={`absolute left-8 top-8 h-12 w-12 ${tone}`} strokeWidth={2} />
+        <UtensilsCrossed className={`absolute left-1 top-3 h-7 w-7 ${tone}`} strokeWidth={2} />
+        <Pizza className={`absolute right-0 top-4 h-7 w-7 ${tone}`} strokeWidth={2} />
+        <Soup className={`absolute bottom-2 left-3 h-7 w-7 ${tone}`} strokeWidth={2} />
+        <Soup className={`absolute bottom-0 right-2 h-7 w-7 ${tone}`} strokeWidth={2} />
+      </div>
+    );
+  }
+
+  return (
+    <div className="relative h-28 w-28">
+      <Zap className={`absolute left-1 top-8 h-12 w-12 ${tone}`} strokeWidth={2} />
+      <Smartphone className={`absolute right-1 top-5 h-16 w-16 ${tone}`} strokeWidth={2} />
+      <Hand className={`absolute right-0 top-14 h-10 w-10 ${tone}`} strokeWidth={2} />
+    </div>
+  );
+}
 
 export default function Home() {
   const assetBase = process.env.NEXT_PUBLIC_BASE_PATH
@@ -214,33 +267,38 @@ export default function Home() {
       </section>
 
       <section id="why-swiggy" className="px-6 py-14">
-        <div className="mx-auto w-full max-w-6xl space-y-8">
-          <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+        <div className="mx-auto w-full max-w-6xl space-y-6">
+          <div className="flex flex-col gap-3">
             <h2 className="text-3xl font-bold text-white">
               Why choose Swiggy for Work
             </h2>
-            <div className="rounded-full bg-white/20 px-4 py-2 text-sm font-semibold text-white">
-              Trusted by HR, Admin & Finance teams
-            </div>
           </div>
-          <div className="grid gap-6 md:grid-cols-3">
-            {whySwiggy.map((item) => {
-              const Icon = item.icon;
-              return (
-              <div
-                key={item.title}
-                className="rounded-3xl border border-black/10 bg-white p-6 text-center shadow-soft"
-              >
-                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-brand-soft text-brand">
-                  <Icon className="h-10 w-10" />
+          <div className="relative overflow-hidden rounded-[32px] bg-[linear-gradient(180deg,#D96531_0%,#CC5723_100%)] p-5 sm:p-7 lg:p-8">
+            <div className="grid gap-6 md:grid-cols-3">
+              {whySwiggy.map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-[28px] bg-white px-7 py-9 text-center shadow-[0_8px_22px_rgba(0,0,0,0.16)]"
+                >
+                  <div className="mx-auto flex h-40 w-40 items-center justify-center rounded-full bg-[#F8E5D8]">
+                    <WhySwiggyGraphic variant={item.iconVariant} />
+                  </div>
+                  <h3 className="mt-6 text-[2.05rem] font-semibold leading-[1.15] text-[#151515]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-4 text-[1.12rem] leading-[1.45] text-[#191919]/85">
+                    {item.description}
+                  </p>
                 </div>
-                <h3 className="mt-4 text-xl font-semibold text-ink">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm text-slate-500">{item.description}</p>
-              </div>
-              );
-            })}
+              ))}
+            </div>
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              className="pointer-events-none absolute bottom-4 right-4 h-8 w-8 fill-[#F6D7C4]"
+            >
+              <path d="M12 2 14.7 9.3 22 12l-7.3 2.7L12 22l-2.7-7.3L2 12l7.3-2.7L12 2Z" />
+            </svg>
           </div>
         </div>
       </section>
