@@ -149,14 +149,15 @@ export default function Home() {
               </p>
             </div>
             <div className="relative lg:justify-self-end">
-              <div className="relative h-[300px] w-full max-w-md overflow-hidden rounded-3xl sm:h-[340px]">
+              <div className="flex h-[300px] w-full max-w-md items-center justify-center overflow-hidden rounded-3xl sm:h-[340px]">
                 <Image
                   src={`${assetBase}/table-swiggy.png`}
                   alt="Swiggy for Work team meals"
-                  fill
+                  width={1024}
+                  height={1024}
                   priority
                   sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-contain rotate-90 scale-[0.9]"
+                  className="h-full w-auto rotate-90 object-contain"
                 />
               </div>
             </div>
