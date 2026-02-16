@@ -174,11 +174,11 @@ export default function CorporateWalletPage() {
                   key={column.title}
                   className="rounded-2xl border border-black/5 bg-surface-muted/70 p-3"
                 >
-                  <div className="mb-3 flex items-center gap-2 px-1">
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-brand-soft text-brand">
+                  <div className="mb-3 flex items-center gap-2 rounded-xl bg-brand px-3 py-2 text-white">
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-white/20 text-white">
                       <ColumnIcon className="h-4 w-4" />
                     </span>
-                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-700">
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white">
                       {column.title}
                     </p>
                   </div>
