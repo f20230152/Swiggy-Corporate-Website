@@ -13,7 +13,7 @@ import {
 } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Swiggy Corporate",
+  title: "Swiggy Corporate Payment Solution Everywhere",
   description:
     "Digitize corporate meal and travel expenses with Swiggy for Work and MakeMyTrip myBiz integration.",
 };
@@ -121,7 +121,7 @@ export default function CorporateWalletPage() {
               Corporate Wallet + myBiz integration
             </p>
             <h1 className="text-4xl font-semibold text-white sm:text-5xl">
-              Swiggy Corporate
+              Swiggy Corporate Payment Solution Everywhere.
             </h1>
             <p className="text-lg text-white/85">
               Eliminating reimbursements, enhancing efficiency. Transform how

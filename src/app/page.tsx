@@ -84,7 +84,7 @@ const testimonials = [
     companyLogo: "/testimonials/4.png",
   },
   {
-    offering: "Concierge Dining",
+    offering: "Corporate Payment Solutions",
     quote:
       "Tracking invoices every month was a mess. Now, it's one single monthly invoice - faster and smoother.",
     name: "Ajay",
@@ -248,7 +248,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="testimonials" className="px-6 py-14">
+      <section id="testimonials" className="bg-brand px-6 py-14">
         <div className="mx-auto w-full max-w-6xl space-y-8">
           <div className="flex items-center justify-between">
             <h2 className="text-3xl font-bold text-white">Customer Cheers</h2>
@@ -257,7 +257,7 @@ export default function Home() {
             {testimonials.map((testimonial) => (
                 <article
                   key={testimonial.name}
-                  className="snap-start rounded-3xl border border-white/60 bg-white p-6 shadow-soft"
+                  className="snap-start rounded-3xl border border-white/60 bg-white p-6"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <span className="inline-flex rounded-full bg-brand-soft px-4 py-1.5 text-xs font-semibold text-brand">
