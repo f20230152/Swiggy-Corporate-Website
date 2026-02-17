@@ -13,7 +13,7 @@ import {
 } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Swiggy Corporate Payment Solution Everywhere",
+  title: "Swiggy Corporate Payment Solution",
   description:
     "Digitize corporate meal and travel expenses with Swiggy for Work and MakeMyTrip myBiz integration.",
 };
@@ -121,7 +121,7 @@ export default function CorporateWalletPage() {
               Corporate Wallet + myBiz integration
             </p>
             <h1 className="text-4xl font-semibold text-white sm:text-5xl">
-              Swiggy Corporate Payment Solution Everywhere.
+              Swiggy Corporate Payment Solution
             </h1>
             <p className="text-lg text-white/85">
               Eliminating reimbursements, enhancing efficiency. Transform how
@@ -145,7 +145,7 @@ export default function CorporateWalletPage() {
             <div className="w-[48%] min-w-[228px] overflow-hidden rounded-3xl border border-white/25 bg-white/10 shadow-soft">
               <Image
                 src={`${assetBase}/corporate-hero-banner.jpeg?v=20260216-2232`}
-                alt="Swiggy Corporate wallet hero"
+                alt="Swiggy Corporate Payment Solution hero"
                 width={1400}
                 height={900}
                 priority

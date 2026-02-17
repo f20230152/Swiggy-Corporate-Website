@@ -11,7 +11,7 @@ import {
 
 const solutions = [
   {
-    title: "Corporate Payment Solution",
+    title: "Swiggy Corporate Payment Solution",
     description:
       "Eliminate reimbursements with a digital-first corporate payment solution.",
     href: "/corporate-wallet",
@@ -84,7 +84,7 @@ const testimonials = [
     companyLogo: "/testimonials/4.png",
   },
   {
-    offering: "Corporate Payment Solutions",
+    offering: "Swiggy Corporate Payment Solution",
     quote:
       "Tracking invoices every month was a mess. Now, it's one single monthly invoice - faster and smoother.",
     name: "Ajay",
@@ -365,7 +365,7 @@ export default function Home() {
                 </legend>
                 <div className="grid gap-2 sm:grid-cols-2">
                   {[
-                    "Corporate Payment Solution",
+                    "Swiggy Corporate Payment Solution",
                     "Corporate Rewards",
                     "Concierge-Led Food & Dining",
                     "Gift Cards",
