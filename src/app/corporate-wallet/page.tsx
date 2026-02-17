@@ -45,6 +45,12 @@ const platformBlocks = [
   },
 ];
 
+const heroTiles = [
+  "No out-of-pocket spends",
+  "Single monthly invoice",
+  "Simplified compliance",
+];
+
 const useCaseColumns = [
   {
     title: "Employees",
@@ -62,25 +68,6 @@ const useCaseColumns = [
       { label: "Late night meals at office", icon: LateNightIcon },
       { label: "Client and team meetings", icon: MeetingsIcon },
       { label: "Celebrations and town halls", icon: CelebrationIcon },
-    ],
-  },
-];
-
-const audienceBenefits = [
-  {
-    title: "Employees",
-    bullets: [
-      "No reimbursement friction",
-      "Stress-free experience while travelling",
-      "Corporate limits visible at checkout",
-    ],
-  },
-  {
-    title: "HR / Admin",
-    bullets: [
-      "Single monthly invoice",
-      "Centralized spend visibility",
-      "Reduced credit card administration",
     ],
   },
 ];
@@ -146,6 +133,16 @@ export default function CorporateWalletPage() {
               streamlined, digital-first solution that saves time and reduces
               administrative effort.
             </p>
+            <div className="grid gap-3 sm:grid-cols-3">
+              {heroTiles.map((tile) => (
+                <div
+                  key={tile}
+                  className="flex min-h-[72px] items-center justify-center rounded-2xl border border-white/35 bg-white/10 px-4 py-3 text-center text-sm font-semibold text-white"
+                >
+                  {tile}
+                </div>
+              ))}
+            </div>
           </div>
           <div className="flex justify-center">
             <div className="w-[48%] min-w-[228px] overflow-hidden rounded-3xl border border-white/25 bg-white/10 shadow-soft">
@@ -209,24 +206,6 @@ export default function CorporateWalletPage() {
               <h2 className="text-xl font-semibold text-ink">{block.title}</h2>
               <ul className="mt-4 space-y-2 text-sm text-slate-500">
                 {block.bullets.map((bullet) => (
-                  <li key={bullet}>- {bullet}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-2">
-          {audienceBenefits.map((group) => (
-            <div
-              key={group.title}
-              className="rounded-3xl border border-black/5 bg-white p-6 shadow-card"
-            >
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
-                {group.title}
-              </p>
-              <ul className="mt-4 space-y-2 text-sm text-slate-500">
-                {group.bullets.map((bullet) => (
                   <li key={bullet}>- {bullet}</li>
                 ))}
               </ul>
