@@ -1,16 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import CtaBand from "@/components/cta-band";
-import {
-  CelebrationIcon,
-  DiningIcon,
-  LateNightIcon,
-  MeetingsIcon,
-  OfficeMealIcon,
-  TeamDinnerIcon,
-  TrainingIcon,
-  TravelMealIcon,
-} from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Swiggy Corporate Payment Solution",
@@ -18,90 +8,48 @@ export const metadata: Metadata = {
     "Digitize corporate meal and travel expenses with Swiggy for Work and MakeMyTrip myBiz integration.",
 };
 
-const platformBlocks = [
-  {
-    title: "No out-of-pocket spends",
-    bullets: [
-      "Reimbursements eliminated",
-      "No bills, submissions, or follow-ups",
-      "Corporate payment at checkout",
-    ],
-  },
-  {
-    title: "Single monthly invoice",
-    bullets: [
-      "Simpler invoicing and audit trail",
-      "Budget control with real-time visibility",
-      "Lower admin ops for finance teams",
-    ],
-  },
-  {
-    title: "Simplified compliance",
-    bullets: [
-      "GST billing issues resolved",
-      "Centralized reporting and invoices",
-      "Policy-led spend limits by employee group.",
-    ],
-  },
+const heroTiles = [
+  "No out-of-pocket spends",
+  "Single monthly invoice",
+  "Simplified compliance",
 ];
 
-const useCaseColumns = [
+const testimonials = [
   {
-    title: "Employees",
-    items: [
-      { label: "Dining out at restaurants", icon: DiningIcon },
-      { label: "Meals at hotels while travelling", icon: TravelMealIcon },
-      { label: "Team dinners at restaurants", icon: TeamDinnerIcon },
-      { label: "Hiring drives and trainings", icon: TrainingIcon },
-    ],
+    offering: "Corporate Wallet",
+    quote:
+      "The main issue for me was the anxiety around credit card bill dues because of the reimbursement process. That's gone now.",
+    name: "Jay",
+    designation: "Sr. Business Development Manager",
+    company: "MakeMyTrip",
+    companyLogo: "/testimonials/4.png",
   },
   {
-    title: "HR / Admin Team",
-    items: [
-      { label: "Food ordering in office", icon: OfficeMealIcon },
-      { label: "Late night meals at office", icon: LateNightIcon },
-      { label: "Client and team meetings", icon: MeetingsIcon },
-      { label: "Celebrations and town halls", icon: CelebrationIcon },
-    ],
-  },
-];
-
-const audienceBenefits = [
-  {
-    title: "Employees",
-    bullets: [
-      "No reimbursement friction",
-      "Stress-free experience while travelling",
-      "Corporate limits visible at checkout",
-    ],
+    offering: "Corporate Rewards",
+    quote:
+      "Getting a proper GST bill in a small town used to be impossible. Now, it's all handled in the app.",
+    name: "Piyush",
+    designation: "Business Development Manager",
+    company: "MakeMyTrip",
+    companyLogo: "/testimonials/4.png",
   },
   {
-    title: "HR / Admin",
-    bullets: [
-      "Single monthly invoice",
-      "Centralized spend visibility",
-      "Reduced credit card administration",
-    ],
-  },
-];
-
-const flow = [
-  {
-    title: "Employees log in via corporate email",
-    detail: "Swiggy for Work access is enabled with verified official IDs.",
+    offering: "Swiggy Corporate Payment Solution",
+    quote:
+      "Tracking invoices every month was a mess. Now, it's one single monthly invoice - faster and smoother.",
+    name: "Ajay",
+    designation: "Admin",
+    company: "KFintech",
+    companyLogo: "/testimonials/5.png",
   },
   {
-    title: "Choose Corporate Payment",
-    detail: "Employees add items to cart and select Corporate Payment at checkout.",
-  },
-  {
-    title: "Dineout: Bill to company",
-    detail: "For dining out, employees select Bill to Company and attach the bill.",
-  },
-  {
-    title: "Admin visibility & reports",
-    detail:
-      "Policy setup, wallet usage reports, and invoices are centralized for finance.",
+    offering: "Gift Cards",
+    quote:
+      "When we order food for small office events, seeing the monthly limit right at checkout helps a lot.",
+    name: "Admin",
+    designation: "Workplace Operations",
+    company: "WeWork",
+    companyLogo: "/testimonials/6.png",
   },
 ];
 
@@ -127,6 +75,16 @@ export default function CorporateWalletPage() {
               streamlined, digital-first solution that saves time and reduces
               administrative effort.
             </p>
+            <div className="grid gap-3 sm:grid-cols-3">
+              {heroTiles.map((tile) => (
+                <div
+                  key={tile}
+                  className="rounded-2xl border border-white/35 bg-white/10 px-4 py-3 text-sm font-semibold text-white"
+                >
+                  {tile}
+                </div>
+              ))}
+            </div>
           </div>
           <div className="flex justify-center">
             <div className="w-[48%] min-w-[228px] overflow-hidden rounded-3xl border border-white/25 bg-white/10 shadow-soft">
@@ -143,111 +101,44 @@ export default function CorporateWalletPage() {
           </div>
         </div>
 
-        <div className="rounded-3xl border border-black/5 bg-white p-6 shadow-card">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
-            Use cases
-          </p>
-          <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            {useCaseColumns.map((column) => {
-              return (
-                <div
-                  key={column.title}
-                  className="rounded-2xl border border-black/5 bg-surface-muted/70 p-3"
-                >
-                  <div className="mb-3 rounded-xl bg-brand px-3 py-2 text-white">
-                    <p className="text-sm font-semibold text-white">
-                      {column.title}
-                    </p>
-                  </div>
-                  <div className="space-y-3 text-sm text-slate-600">
-                    {column.items.map((item) => {
-                      const ItemIcon = item.icon;
-                      return (
-                        <div
-                          key={item.label}
-                          className="flex items-center gap-3 rounded-2xl border border-black/5 bg-white px-3 py-2.5"
-                        >
-                          <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-brand-soft text-brand">
-                            <ItemIcon className="h-4 w-4" />
-                          </span>
-                          <span>{item.label}</span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              );
-            })}
+        <section id="testimonials" className="space-y-8">
+          <div className="flex items-center justify-between">
+            <h2 className="text-3xl font-bold text-white">Customer Cheers</h2>
           </div>
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-3">
-          {platformBlocks.map((block) => (
-            <div
-              key={block.title}
-              className="rounded-3xl border border-black/5 bg-white p-6 shadow-card"
-            >
-              <h2 className="text-xl font-semibold text-ink">{block.title}</h2>
-              <ul className="mt-4 space-y-2 text-sm text-slate-500">
-                {block.bullets.map((bullet) => (
-                  <li key={bullet}>- {bullet}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-
-        <div className="grid gap-6 lg:grid-cols-2">
-          {audienceBenefits.map((group) => (
-            <div
-              key={group.title}
-              className="rounded-3xl border border-black/5 bg-white p-6 shadow-card"
-            >
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
-                {group.title}
-              </p>
-              <ul className="mt-4 space-y-2 text-sm text-slate-500">
-                {group.bullets.map((bullet) => (
-                  <li key={bullet}>- {bullet}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-[1fr_1.1fr]">
-          <div className="rounded-3xl border border-black/5 bg-white p-6 shadow-card">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
-              How it works
-            </p>
-            <h2 className="mt-4 text-2xl font-semibold text-ink">
-              Corporate payments in four steps
-            </h2>
-            <p className="mt-3 text-sm text-slate-500">
-              From employee login to finance reporting, everything stays within
-              policy.
-            </p>
-          </div>
-          <div className="space-y-4">
-            {flow.map((item, index) => (
-              <div
-                key={item.title}
-                className="flex gap-4 rounded-2xl border border-black/5 bg-white p-4 shadow-card"
+          <div className="grid snap-x snap-mandatory grid-flow-col auto-cols-[85%] gap-6 overflow-x-auto pb-4 pt-2 sm:auto-cols-[65%] md:auto-cols-[50%] lg:auto-cols-[calc((100%-3rem)/3)]">
+            {testimonials.map((testimonial) => (
+              <article
+                key={testimonial.name}
+                className="snap-start rounded-3xl border border-white/60 bg-white p-6"
               >
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand text-sm font-semibold text-white">
-                  0{index + 1}
-                </span>
-                <div>
-                  <p className="text-base font-semibold text-ink">
-                    {item.title}
-                  </p>
-                  <p className="text-sm text-slate-500">{item.detail}</p>
+                <div className="flex items-start justify-between gap-3">
+                  <span className="inline-flex rounded-full bg-brand-soft px-4 py-1.5 text-xs font-semibold text-brand">
+                    {testimonial.offering}
+                  </span>
+                  <div className="flex items-center justify-end">
+                    <Image
+                      src={`${assetBase}${testimonial.companyLogo}`}
+                      alt={`${testimonial.company} logo`}
+                      width={77}
+                      height={34}
+                      className="h-[34px] w-auto object-contain"
+                    />
+                  </div>
                 </div>
-              </div>
+                <div className="mt-4">
+                  <p className="text-sm text-slate-700">
+                    &ldquo;{testimonial.quote}&rdquo;
+                  </p>
+                  <div className="mt-6 text-sm">
+                    <p className="font-semibold text-ink">{testimonial.name}</p>
+                    <p className="text-slate-500">{testimonial.designation}</p>
+                    <p className="text-slate-500">{testimonial.company}</p>
+                  </div>
+                </div>
+              </article>
             ))}
           </div>
-        </div>
+        </section>
 
         <CtaBand
           title="Replace manual reimbursements with a digital corporate wallet."
