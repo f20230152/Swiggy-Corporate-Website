@@ -40,15 +40,14 @@ const platformBlocks = [
     bullets: [
       "GST billing issues resolved",
       "Centralized reporting and invoices",
-      "Policy-led spend limits by employee group",
+      "Policy-led spend limits by employee group.",
     ],
   },
 ];
 
 const useCaseColumns = [
   {
-    title: "Dining & travel",
-    icon: DiningIcon,
+    title: "Employees",
     items: [
       { label: "Dining out at restaurants", icon: DiningIcon },
       { label: "Meals at hotels while travelling", icon: TravelMealIcon },
@@ -57,8 +56,7 @@ const useCaseColumns = [
     ],
   },
   {
-    title: "Office & team events",
-    icon: OfficeMealIcon,
+    title: "HR / Admin Team",
     items: [
       { label: "Food ordering in office", icon: OfficeMealIcon },
       { label: "Late night meals at office", icon: LateNightIcon },
@@ -129,17 +127,6 @@ export default function CorporateWalletPage() {
               streamlined, digital-first solution that saves time and reduces
               administrative effort.
             </p>
-            <div className="flex flex-wrap gap-3 text-sm text-white">
-              <span className="rounded-full border border-white/40 px-4 py-2">
-                MakeMyTrip myBiz
-              </span>
-              <span className="rounded-full border border-white/40 px-4 py-2">
-                GST-ready invoicing
-              </span>
-              <span className="rounded-full border border-white/40 px-4 py-2">
-                Zero reimbursements
-              </span>
-            </div>
           </div>
           <div className="flex justify-center">
             <div className="w-[48%] min-w-[228px] overflow-hidden rounded-3xl border border-white/25 bg-white/10 shadow-soft">
@@ -162,17 +149,13 @@ export default function CorporateWalletPage() {
           </p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             {useCaseColumns.map((column) => {
-              const ColumnIcon = column.icon;
               return (
                 <div
                   key={column.title}
                   className="rounded-2xl border border-black/5 bg-surface-muted/70 p-3"
                 >
-                  <div className="mb-3 flex items-center gap-2 rounded-xl bg-brand px-3 py-2 text-white">
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-white/20 text-white">
-                      <ColumnIcon className="h-4 w-4" />
-                    </span>
-                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-white">
+                  <div className="mb-3 rounded-xl bg-brand px-3 py-2 text-white">
+                    <p className="text-sm font-semibold text-white">
                       {column.title}
                     </p>
                   </div>
