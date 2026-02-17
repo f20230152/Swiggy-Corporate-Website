@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import CtaBand from "@/components/cta-band";
+import {
+  CelebrationIcon,
+  DiningIcon,
+  LateNightIcon,
+  MeetingsIcon,
+  OfficeMealIcon,
+  TeamDinnerIcon,
+  TrainingIcon,
+  TravelMealIcon,
+} from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Swiggy Corporate Payment Solution",
@@ -8,10 +18,71 @@ export const metadata: Metadata = {
     "Digitize corporate meal and travel expenses with Swiggy for Work and MakeMyTrip myBiz integration.",
 };
 
-const heroTiles = [
-  "No out-of-pocket spends",
-  "Single monthly invoice",
-  "Simplified compliance",
+const platformBlocks = [
+  {
+    title: "No out-of-pocket spends",
+    bullets: [
+      "Reimbursements eliminated",
+      "No bills, submissions, or follow-ups",
+      "Corporate payment at checkout",
+    ],
+  },
+  {
+    title: "Single monthly invoice",
+    bullets: [
+      "Simpler invoicing and audit trail",
+      "Budget control with real-time visibility",
+      "Lower admin ops for finance teams",
+    ],
+  },
+  {
+    title: "Simplified compliance",
+    bullets: [
+      "GST billing issues resolved",
+      "Centralized reporting and invoices",
+      "Policy-led spend limits by employee group.",
+    ],
+  },
+];
+
+const useCaseColumns = [
+  {
+    title: "Employees",
+    items: [
+      { label: "Dining out at restaurants", icon: DiningIcon },
+      { label: "Meals at hotels while travelling", icon: TravelMealIcon },
+      { label: "Team dinners at restaurants", icon: TeamDinnerIcon },
+      { label: "Hiring drives and trainings", icon: TrainingIcon },
+    ],
+  },
+  {
+    title: "HR / Admin Team",
+    items: [
+      { label: "Food ordering in office", icon: OfficeMealIcon },
+      { label: "Late night meals at office", icon: LateNightIcon },
+      { label: "Client and team meetings", icon: MeetingsIcon },
+      { label: "Celebrations and town halls", icon: CelebrationIcon },
+    ],
+  },
+];
+
+const audienceBenefits = [
+  {
+    title: "Employees",
+    bullets: [
+      "No reimbursement friction",
+      "Stress-free experience while travelling",
+      "Corporate limits visible at checkout",
+    ],
+  },
+  {
+    title: "HR / Admin",
+    bullets: [
+      "Single monthly invoice",
+      "Centralized spend visibility",
+      "Reduced credit card administration",
+    ],
+  },
 ];
 
 const testimonials = [
@@ -75,16 +146,6 @@ export default function CorporateWalletPage() {
               streamlined, digital-first solution that saves time and reduces
               administrative effort.
             </p>
-            <div className="grid gap-3 sm:grid-cols-3">
-              {heroTiles.map((tile) => (
-                <div
-                  key={tile}
-                  className="rounded-2xl border border-white/35 bg-white/10 px-4 py-3 text-sm font-semibold text-white"
-                >
-                  {tile}
-                </div>
-              ))}
-            </div>
           </div>
           <div className="flex justify-center">
             <div className="w-[48%] min-w-[228px] overflow-hidden rounded-3xl border border-white/25 bg-white/10 shadow-soft">
@@ -99,6 +160,78 @@ export default function CorporateWalletPage() {
               />
             </div>
           </div>
+        </div>
+
+        <div className="rounded-3xl border border-black/5 bg-white p-6 shadow-card">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+            Use cases
+          </p>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            {useCaseColumns.map((column) => {
+              return (
+                <div
+                  key={column.title}
+                  className="rounded-2xl border border-black/5 bg-surface-muted/70 p-3"
+                >
+                  <div className="mb-3 rounded-xl bg-brand px-3 py-2 text-white">
+                    <p className="text-sm font-semibold text-white">
+                      {column.title}
+                    </p>
+                  </div>
+                  <div className="space-y-3 text-sm text-slate-600">
+                    {column.items.map((item) => {
+                      const ItemIcon = item.icon;
+                      return (
+                        <div
+                          key={item.label}
+                          className="flex items-center gap-3 rounded-2xl border border-black/5 bg-white px-3 py-2.5"
+                        >
+                          <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-brand-soft text-brand">
+                            <ItemIcon className="h-4 w-4" />
+                          </span>
+                          <span>{item.label}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-3">
+          {platformBlocks.map((block) => (
+            <div
+              key={block.title}
+              className="rounded-3xl border border-black/5 bg-white p-6 shadow-card"
+            >
+              <h2 className="text-xl font-semibold text-ink">{block.title}</h2>
+              <ul className="mt-4 space-y-2 text-sm text-slate-500">
+                {block.bullets.map((bullet) => (
+                  <li key={bullet}>- {bullet}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-2">
+          {audienceBenefits.map((group) => (
+            <div
+              key={group.title}
+              className="rounded-3xl border border-black/5 bg-white p-6 shadow-card"
+            >
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
+                {group.title}
+              </p>
+              <ul className="mt-4 space-y-2 text-sm text-slate-500">
+                {group.bullets.map((bullet) => (
+                  <li key={bullet}>- {bullet}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
         <section id="testimonials" className="space-y-8">
