@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CtaBand from "@/components/cta-band";
+import BackToHomeButton from "@/components/back-to-home-button";
 import { GiftIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -49,6 +50,7 @@ export default function GiftCardsPage() {
   return (
     <div className="px-6 py-14">
       <section className="mx-auto w-full max-w-6xl space-y-10">
+        <BackToHomeButton />
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-5 text-white">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">

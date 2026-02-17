@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import CtaBand from "@/components/cta-band";
+import BackToHomeButton from "@/components/back-to-home-button";
 import {
   CelebrationIcon,
   DiningIcon,
@@ -76,7 +77,7 @@ const testimonials = [
   {
     offering: "Corporate Wallet",
     quote:
-      "The main issue for me was the anxiety around credit card bill dues because of the reimbursement process. That's gone now.",
+      "Implementation was quick and seamless, and moving to bill-to-company eliminated manual receipts and reimbursement follow-ups.",
     name: "Jay",
     designation: "Sr. Business Development Manager",
     company: "MakeMyTrip",
@@ -85,7 +86,7 @@ const testimonials = [
   {
     offering: "Corporate Rewards",
     quote:
-      "Getting a proper GST bill in a small town used to be impossible. Now, it's all handled in the app.",
+      "Exclusive corporate rewards, multiple deals, and an intuitive ordering flow have made daily ordering easier and more valuable for our teams.",
     name: "Piyush",
     designation: "Business Development Manager",
     company: "MakeMyTrip",
@@ -94,7 +95,7 @@ const testimonials = [
   {
     offering: "Swiggy Corporate Payment Solution",
     quote:
-      "Tracking invoices every month was a mess. Now, it's one single monthly invoice - faster and smoother.",
+      "Secure access through domain whitelisting helped us run travel and food spend under bill-to-company with stronger compliance and less manual work.",
     name: "Ajay",
     designation: "Admin",
     company: "KFintech",
@@ -103,7 +104,7 @@ const testimonials = [
   {
     offering: "Gift Cards",
     quote:
-      "When we order food for small office events, seeing the monthly limit right at checkout helps a lot.",
+      "The overall experience has been smooth and efficient, giving employees and finance teams better visibility, control, and time savings on approvals.",
     name: "Admin",
     designation: "Workplace Operations",
     company: "WeWork",
@@ -119,6 +120,7 @@ export default function CorporateWalletPage() {
   return (
     <div className="px-6 py-14">
       <section className="mx-auto w-full max-w-6xl space-y-10">
+        <BackToHomeButton />
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-5 text-white">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
