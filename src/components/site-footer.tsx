@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const footerLinks = [
-  { label: "Swiggy Corporate Payment Solution", href: "/corporate-wallet" },
+  { label: "Corporate Payment Solution", href: "/corporate-wallet" },
   { label: "Corporate Rewards", href: "/corporate-rewards" },
   { label: "Concierge Dining", href: "/concierge-led-food-dining" },
   { label: "Gift Cards", href: "/gift-cards" },
@@ -56,12 +56,6 @@ export default function SiteFooter() {
               Tell us about your team size and requirements. We&apos;ll craft a
               bespoke program within 24 hours.
             </p>
-            <Link
-              href="/#contact"
-              className="inline-flex items-center justify-center rounded-full bg-brand px-4 py-2 text-sm font-semibold text-white shadow-card transition hover:bg-[var(--brand-strong)]"
-            >
-              Talk to Swiggy for Work
-            </Link>
           </div>
         </div>
         <div className="mt-10 flex flex-wrap items-center justify-between gap-3 border-t border-black/5 pt-6 text-xs text-slate-500">

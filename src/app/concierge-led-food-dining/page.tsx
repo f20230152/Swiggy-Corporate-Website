@@ -127,7 +127,7 @@ export default function ConciergeLedFoodDiningPage() {
             </div>
           ))}
 
-        <div className="rounded-3xl border border-black/5 bg-white p-6 shadow-card">
+        <div className="rounded-3xl border border-black/5 bg-white p-6 shadow-card lg:col-span-3">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
             Flexible payment options
           </p>

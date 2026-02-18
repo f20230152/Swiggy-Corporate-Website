@@ -11,7 +11,7 @@ import {
 
 const solutions = [
   {
-    title: "Swiggy Corporate Payment Solution",
+    title: "Corporate Payment Solution",
     description:
       "Eliminate reimbursements with a digital-first corporate payment solution.",
     href: "/corporate-wallet",
@@ -66,38 +66,20 @@ const whySwiggy: Array<{
 
 const testimonials = [
   {
-    offering: "Corporate Wallet",
-    quote:
-      "Implementation was quick and seamless, and moving to bill-to-company eliminated manual receipts and reimbursement follow-ups.",
-    name: "Jay",
-    designation: "Sr. Business Development Manager",
-    company: "MakeMyTrip",
-    companyLogo: "/testimonials/4.png",
-  },
-  {
-    offering: "Corporate Rewards",
-    quote:
-      "Exclusive corporate rewards, multiple deals, and an intuitive ordering flow have made daily ordering easier and more valuable for our teams.",
-    name: "Piyush",
-    designation: "Business Development Manager",
-    company: "MakeMyTrip",
-    companyLogo: "/testimonials/4.png",
-  },
-  {
-    offering: "Swiggy Corporate Payment Solution",
+    offering: "Corporate Payments",
     quote:
       "Secure access through domain whitelisting helped us run travel and food spend under bill-to-company with stronger compliance and less manual work.",
-    name: "Ajay",
+    name: "A V Hanisha",
     designation: "Admin",
     company: "KFintech",
     companyLogo: "/testimonials/5.png",
   },
   {
-    offering: "Gift Cards",
+    offering: "Corporate Payments",
     quote:
       "The overall experience has been smooth and efficient, giving employees and finance teams better visibility, control, and time savings on approvals.",
-    name: "Admin",
-    designation: "Workplace Operations",
+    name: "Maria Sneha",
+    designation: "Admin",
     company: "WeWork",
     companyLogo: "/testimonials/6.png",
   },
@@ -132,7 +114,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <section className="relative overflow-hidden px-6 pb-14 pt-12">
+      <section className="relative overflow-hidden px-6 pb-6 pt-12">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-10">
           <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
             <div className="space-y-5 text-white">
@@ -165,7 +147,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="solutions" className="px-6 py-14">
+      <section id="solutions" className="px-6 pb-14 pt-6">
         <div className="mx-auto w-full max-w-6xl space-y-8">
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <h2 className="text-3xl font-bold text-white">
@@ -173,7 +155,7 @@ export default function Home() {
             </h2>
             <Link
               href="/#contact"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-white"
+              className="inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/30"
             >
               Talk to an expert <ChevronRight className="h-4 w-4" />
             </Link>
@@ -260,7 +242,7 @@ export default function Home() {
                   className="snap-start rounded-3xl border border-white/60 bg-white p-6"
                 >
                   <div className="flex items-start justify-between gap-3">
-                    <span className="inline-flex rounded-full bg-brand-soft px-4 py-1.5 text-xs font-semibold text-brand">
+                    <span className="inline-flex whitespace-nowrap rounded-full bg-brand-soft px-4 py-1.5 text-xs font-semibold text-brand">
                       {testimonial.offering}
                     </span>
                     <div className="flex items-center justify-end">
@@ -365,7 +347,7 @@ export default function Home() {
                 </legend>
                 <div className="grid gap-2 sm:grid-cols-2">
                   {[
-                    "Swiggy Corporate Payment Solution",
+                    "Corporate Payment Solution",
                     "Corporate Rewards",
                     "Concierge-Led Food & Dining",
                     "Gift Cards",

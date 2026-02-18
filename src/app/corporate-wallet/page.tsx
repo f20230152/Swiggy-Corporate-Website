@@ -4,19 +4,17 @@ import CtaBand from "@/components/cta-band";
 import BackToHomeButton from "@/components/back-to-home-button";
 import {
   CelebrationIcon,
-  DiningIcon,
   LateNightIcon,
   MeetingsIcon,
-  OfficeMealIcon,
   TeamDinnerIcon,
   TrainingIcon,
   TravelMealIcon,
 } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Swiggy Corporate Payment Solution",
+  title: "Corporate Payment Solution",
   description:
-    "Digitize corporate meal and travel expenses with Swiggy for Work and MakeMyTrip myBiz integration.",
+    "Digitize corporate meal and travel expenses with a bill-to-company workflow and myBiz integration.",
 };
 
 const platformBlocks = [
@@ -56,57 +54,42 @@ const useCaseColumns = [
   {
     title: "Employees",
     items: [
-      { label: "Dining out at restaurants", icon: DiningIcon },
-      { label: "Meals at hotels while travelling", icon: TravelMealIcon },
+      {
+        label: "Meals while travelling at restaurants or at office",
+        icon: TravelMealIcon,
+      },
+      { label: "Late night meals in office", icon: LateNightIcon },
       { label: "Team dinners at restaurants", icon: TeamDinnerIcon },
-      { label: "Hiring drives and trainings", icon: TrainingIcon },
+      { label: "Client meetings", icon: MeetingsIcon },
     ],
   },
   {
     title: "HR / Admin Team",
     items: [
-      { label: "Food ordering in office", icon: OfficeMealIcon },
-      { label: "Late night meals at office", icon: LateNightIcon },
-      { label: "Client and team meetings", icon: MeetingsIcon },
-      { label: "Celebrations and town halls", icon: CelebrationIcon },
+      { label: "Celebrations and townhalls", icon: CelebrationIcon },
+      { label: "Hiring drives", icon: TrainingIcon },
+      { label: "Trainings", icon: TrainingIcon },
+      { label: "Team meetings", icon: MeetingsIcon },
     ],
   },
 ];
 
 const testimonials = [
   {
-    offering: "Corporate Wallet",
-    quote:
-      "Implementation was quick and seamless, and moving to bill-to-company eliminated manual receipts and reimbursement follow-ups.",
-    name: "Jay",
-    designation: "Sr. Business Development Manager",
-    company: "MakeMyTrip",
-    companyLogo: "/testimonials/4.png",
-  },
-  {
-    offering: "Corporate Rewards",
-    quote:
-      "Exclusive corporate rewards, multiple deals, and an intuitive ordering flow have made daily ordering easier and more valuable for our teams.",
-    name: "Piyush",
-    designation: "Business Development Manager",
-    company: "MakeMyTrip",
-    companyLogo: "/testimonials/4.png",
-  },
-  {
-    offering: "Swiggy Corporate Payment Solution",
+    offering: "Corporate Payments",
     quote:
       "Secure access through domain whitelisting helped us run travel and food spend under bill-to-company with stronger compliance and less manual work.",
-    name: "Ajay",
+    name: "A V Hanisha",
     designation: "Admin",
     company: "KFintech",
     companyLogo: "/testimonials/5.png",
   },
   {
-    offering: "Gift Cards",
+    offering: "Corporate Payments",
     quote:
       "The overall experience has been smooth and efficient, giving employees and finance teams better visibility, control, and time savings on approvals.",
-    name: "Admin",
-    designation: "Workplace Operations",
+    name: "Maria Sneha",
+    designation: "Admin",
     company: "WeWork",
     companyLogo: "/testimonials/6.png",
   },
@@ -127,7 +110,7 @@ export default function CorporateWalletPage() {
               Corporate Wallet + myBiz integration
             </p>
             <h1 className="text-4xl font-semibold text-white sm:text-5xl">
-              Swiggy Corporate Payment Solution
+              Corporate Payment Solution
             </h1>
             <p className="text-lg text-white/85">
               Eliminating reimbursements, enhancing efficiency. Transform how
@@ -150,7 +133,7 @@ export default function CorporateWalletPage() {
             <div className="w-[48%] min-w-[228px] overflow-hidden rounded-3xl border border-white/25 bg-white/10 shadow-soft">
               <Image
                 src={`${assetBase}/corporate-hero-banner.jpeg?v=20260216-2232`}
-                alt="Swiggy Corporate Payment Solution hero"
+                alt="Corporate Payment Solution hero"
                 width={1400}
                 height={900}
                 priority
@@ -172,8 +155,8 @@ export default function CorporateWalletPage() {
                   key={column.title}
                   className="rounded-2xl border border-black/5 bg-surface-muted/70 p-3"
                 >
-                  <div className="mb-3 rounded-xl bg-brand px-3 py-2 text-white">
-                    <p className="text-sm font-semibold text-white">
+                  <div className="mb-3 rounded-xl bg-brand px-3 py-2 text-center text-white">
+                    <p className="text-center text-sm font-semibold text-white">
                       {column.title}
                     </p>
                   </div>
@@ -199,20 +182,25 @@ export default function CorporateWalletPage() {
           </div>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-3">
-          {platformBlocks.map((block) => (
-            <div
-              key={block.title}
-              className="rounded-3xl border border-black/5 bg-white p-6 shadow-card"
-            >
-              <h2 className="text-xl font-semibold text-ink">{block.title}</h2>
-              <ul className="mt-4 space-y-2 text-sm text-slate-500">
-                {block.bullets.map((bullet) => (
-                  <li key={bullet}>- {bullet}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <div className="space-y-4">
+          <h2 className="text-center text-3xl font-bold text-white">
+            Unparalleled convenience for corporates
+          </h2>
+          <div className="grid gap-6 lg:grid-cols-3">
+            {platformBlocks.map((block) => (
+              <div
+                key={block.title}
+                className="rounded-3xl border border-black/5 bg-white p-6 shadow-card"
+              >
+                <h2 className="text-xl font-semibold text-ink">{block.title}</h2>
+                <ul className="mt-4 space-y-2 text-sm text-slate-500">
+                  {block.bullets.map((bullet) => (
+                    <li key={bullet}>- {bullet}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
 
         <section id="testimonials" className="space-y-8">
@@ -226,7 +214,7 @@ export default function CorporateWalletPage() {
                 className="snap-start rounded-3xl border border-white/60 bg-white p-6"
               >
                 <div className="flex items-start justify-between gap-3">
-                  <span className="inline-flex rounded-full bg-brand-soft px-4 py-1.5 text-xs font-semibold text-brand">
+                  <span className="inline-flex whitespace-nowrap rounded-full bg-brand-soft px-4 py-1.5 text-xs font-semibold text-brand">
                     {testimonial.offering}
                   </span>
                   <div className="flex items-center justify-end">

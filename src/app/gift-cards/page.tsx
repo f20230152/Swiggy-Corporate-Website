@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import CtaBand from "@/components/cta-band";
 import BackToHomeButton from "@/components/back-to-home-button";
-import { GiftIcon } from "@/components/icons";
+import { GiftIcon, RewardsIcon, WalletIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Gift Cards",
@@ -44,6 +44,12 @@ const flow = [
     detail:
       "Monitor redemption rates, expiry status, and engagement outcomes.",
   },
+];
+
+const workflowVisuals = [
+  { title: "Budget setup", Icon: WalletIcon },
+  { title: "Bulk dispatch", Icon: GiftIcon },
+  { title: "Live tracking", Icon: RewardsIcon },
 ];
 
 export default function GiftCardsPage() {
@@ -150,6 +156,32 @@ export default function GiftCardsPage() {
               Designed for enterprise HR and Admin teams with automation and
               reporting built in.
             </p>
+            <div className="mt-6 rounded-2xl border border-black/5 bg-surface-muted p-4">
+              <div className="grid gap-3 sm:grid-cols-3">
+                {workflowVisuals.map((item) => {
+                  const Icon = item.Icon;
+                  return (
+                    <div
+                      key={item.title}
+                      className="rounded-xl border border-black/5 bg-white px-3 py-3 text-center"
+                    >
+                      <span className="mx-auto inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand-soft text-brand">
+                        <Icon className="h-5 w-5" />
+                      </span>
+                      <p className="mt-2 text-xs font-semibold text-ink">
+                        {item.title}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+              <div className="mt-4 rounded-full bg-brand/15 p-1">
+                <div className="h-1.5 w-2/3 rounded-full bg-brand" />
+              </div>
+              <p className="mt-3 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+                Automated gifting progress
+              </p>
+            </div>
           </div>
           <div className="space-y-4">
             {flow.map((item, index) => (
