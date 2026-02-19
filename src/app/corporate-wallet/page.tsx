@@ -74,18 +74,45 @@ const useCaseColumns = [
   },
 ];
 
-const testimonialCards = [
+const testimonials = [
   {
-    src: "/testimonials/corporate-wallet-slide-1.png",
-    alt: "KFintech testimonial card",
+    offering: "Corporate Payments",
+    companyLogo: "/testimonials/5.png",
+    companyLogoAlt: "KFintech logo",
+    companyLogoWidth: 182,
+    companyLogoHeight: 36,
+    quote:
+      "Earlier, meal reimbursements meant chasing employees for receipts, handling paperwork, and managing multiple approval layers-costing us time and productivity. With Swiggy for Work, the process is completely seamless, eliminating administrative overhead. It has streamlined our workflows and saved valuable hours for our team.",
+    name: "A V Hanisha",
+    designation: "Facility Manager",
+    company: "KFintech, Hyderabad",
+    headshot: "/testimonials/av-hanisha.png",
+    headshotAlt: "A V Hanisha",
   },
   {
-    src: "/testimonials/corporate-wallet-slide-2.png",
-    alt: "Translumina testimonial card",
+    offering: "Corporate Payments",
+    companyLogo: "/testimonials/wework-logo.png",
+    companyLogoAlt: "WeWork logo",
+    companyLogoWidth: 132,
+    companyLogoHeight: 40,
+    quote:
+      "Swiggy Corporate Payments has brought unmatched transparency and control to our meal benefits program. We can now track expenses in real-time, stay fully aligned with company budgets, and still give our employees the freedom to choose their meals. The shift has not only simplified administration but also improved employee satisfaction.",
+    name: "Maria Sneha",
+    designation: "Administrator",
+    company: "Wework, Hyderabad",
+    headshot: "/testimonials/maria-sneha.png",
+    headshotAlt: "Maria Sneha",
   },
   {
-    src: "/testimonials/corporate-wallet-slide-3.png",
-    alt: "WeWork testimonial card",
+    offering: "Corporate Payments",
+    companyLogo: "/testimonials/translumina-logo.png",
+    companyLogoAlt: "Translumina logo",
+    companyLogoWidth: 208,
+    companyLogoHeight: 42,
+    quote: "XX",
+    name: "Maria Sneha",
+    designation: "Administrator",
+    company: "Wework, Hyderabad",
   },
 ];
 
@@ -100,9 +127,6 @@ export default function CorporateWalletPage() {
         <BackToHomeButton />
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-5 text-white">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
-              Corporate Wallet + myBiz integration
-            </p>
             <h1 className="text-4xl font-semibold text-white sm:text-5xl">
               Corporate Payment Solution
             </h1>
@@ -124,14 +148,14 @@ export default function CorporateWalletPage() {
             </div>
           </div>
           <div className="flex justify-center">
-            <div className="w-[48%] min-w-[228px] overflow-hidden rounded-3xl border border-white/25 bg-white/10 shadow-soft">
+            <div className="w-[82%] min-w-[320px] max-w-[460px] overflow-hidden rounded-3xl border border-white/25 bg-white/10 shadow-soft">
               <Image
                 src={`${assetBase}/corporate-hero-banner.jpeg?v=20260216-2232`}
                 alt="Corporate Payment Solution hero"
                 width={1400}
                 height={900}
                 priority
-                sizes="(max-width: 640px) 70vw, (max-width: 1024px) 45vw, 18vw"
+                sizes="(max-width: 640px) 82vw, (max-width: 1024px) 52vw, 34vw"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -201,20 +225,43 @@ export default function CorporateWalletPage() {
           <div className="flex items-center justify-between">
             <h2 className="text-3xl font-bold text-white">Customer Cheers</h2>
           </div>
-          <div className="grid snap-x snap-mandatory grid-flow-col auto-cols-[85%] gap-6 overflow-x-auto pb-4 pt-2 sm:auto-cols-[65%] md:auto-cols-[50%] lg:auto-cols-[calc((100%-3rem)/3)]">
-            {testimonialCards.map((card) => (
+          <div className="grid snap-x snap-mandatory grid-flow-col auto-cols-[92%] gap-6 overflow-x-auto pb-4 pt-2 sm:auto-cols-[78%] md:auto-cols-[58%] lg:auto-cols-[calc((100%-3rem)/3)]">
+            {testimonials.map((testimonial) => (
               <article
-                key={card.src}
-                className="snap-start overflow-hidden rounded-2xl shadow-soft"
+                key={`${testimonial.name}-${testimonial.companyLogo}`}
+                className="snap-start rounded-3xl border border-white/60 bg-white p-6 shadow-soft md:p-7"
               >
-                <Image
-                  src={`${assetBase}${card.src}`}
-                  alt={card.alt}
-                  width={960}
-                  height={540}
-                  sizes="(max-width: 640px) 85vw, (max-width: 1024px) 65vw, 32vw"
-                  className="h-auto w-full"
-                />
+                <div className="flex items-start justify-between gap-3">
+                  <span className="inline-flex whitespace-nowrap rounded-full bg-brand-soft px-4 py-1.5 text-xs font-semibold text-brand">
+                    {testimonial.offering}
+                  </span>
+                  <Image
+                    src={`${assetBase}${testimonial.companyLogo}`}
+                    alt={testimonial.companyLogoAlt}
+                    width={testimonial.companyLogoWidth}
+                    height={testimonial.companyLogoHeight}
+                    className="h-auto max-h-10 w-auto object-contain"
+                  />
+                </div>
+                <p className="mt-5 text-base leading-relaxed text-slate-800">
+                  {testimonial.quote}
+                </p>
+                <div className="mt-6 flex items-end justify-between gap-4">
+                  <div className="text-base">
+                    <p className="font-bold text-ink">{testimonial.name}</p>
+                    <p className="text-slate-700">{testimonial.designation}</p>
+                    <p className="text-slate-700">{testimonial.company}</p>
+                  </div>
+                  {testimonial.headshot ? (
+                    <Image
+                      src={`${assetBase}${testimonial.headshot}`}
+                      alt={testimonial.headshotAlt ?? testimonial.name}
+                      width={110}
+                      height={110}
+                      className="h-[92px] w-[92px] shrink-0 rounded-2xl object-cover"
+                    />
+                  ) : null}
+                </div>
               </article>
             ))}
           </div>
