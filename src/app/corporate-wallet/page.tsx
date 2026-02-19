@@ -74,24 +74,18 @@ const useCaseColumns = [
   },
 ];
 
-const testimonials = [
+const testimonialCards = [
   {
-    offering: "Corporate Payments",
-    quote:
-      "Secure access through domain whitelisting helped us run travel and food spend under bill-to-company with stronger compliance and less manual work.",
-    name: "A V Hanisha",
-    designation: "Admin",
-    company: "KFintech",
-    companyLogo: "/testimonials/5.png",
+    src: "/testimonials/corporate-wallet-slide-1.png",
+    alt: "KFintech testimonial card",
   },
   {
-    offering: "Corporate Payments",
-    quote:
-      "The overall experience has been smooth and efficient, giving employees and finance teams better visibility, control, and time savings on approvals.",
-    name: "Maria Sneha",
-    designation: "Admin",
-    company: "WeWork",
-    companyLogo: "/testimonials/6.png",
+    src: "/testimonials/corporate-wallet-slide-2.png",
+    alt: "Translumina testimonial card",
+  },
+  {
+    src: "/testimonials/corporate-wallet-slide-3.png",
+    alt: "WeWork testimonial card",
   },
 ];
 
@@ -183,7 +177,7 @@ export default function CorporateWalletPage() {
         </div>
 
         <div className="space-y-4">
-          <h2 className="text-center text-3xl font-bold text-white">
+          <h2 className="text-left text-3xl font-bold text-white">
             Unparalleled convenience for corporates
           </h2>
           <div className="grid gap-6 lg:grid-cols-3">
@@ -208,35 +202,19 @@ export default function CorporateWalletPage() {
             <h2 className="text-3xl font-bold text-white">Customer Cheers</h2>
           </div>
           <div className="grid snap-x snap-mandatory grid-flow-col auto-cols-[85%] gap-6 overflow-x-auto pb-4 pt-2 sm:auto-cols-[65%] md:auto-cols-[50%] lg:auto-cols-[calc((100%-3rem)/3)]">
-            {testimonials.map((testimonial) => (
+            {testimonialCards.map((card) => (
               <article
-                key={testimonial.name}
-                className="snap-start rounded-3xl border border-white/60 bg-white p-6"
+                key={card.src}
+                className="snap-start overflow-hidden rounded-2xl shadow-soft"
               >
-                <div className="flex items-start justify-between gap-3">
-                  <span className="inline-flex whitespace-nowrap rounded-full bg-brand-soft px-4 py-1.5 text-xs font-semibold text-brand">
-                    {testimonial.offering}
-                  </span>
-                  <div className="flex items-center justify-end">
-                    <Image
-                      src={`${assetBase}${testimonial.companyLogo}`}
-                      alt={`${testimonial.company} logo`}
-                      width={77}
-                      height={34}
-                      className="h-[34px] w-auto object-contain"
-                    />
-                  </div>
-                </div>
-                <div className="mt-4">
-                  <p className="text-sm text-slate-700">
-                    &ldquo;{testimonial.quote}&rdquo;
-                  </p>
-                  <div className="mt-6 text-sm">
-                    <p className="font-semibold text-ink">{testimonial.name}</p>
-                    <p className="text-slate-500">{testimonial.designation}</p>
-                    <p className="text-slate-500">{testimonial.company}</p>
-                  </div>
-                </div>
+                <Image
+                  src={`${assetBase}${card.src}`}
+                  alt={card.alt}
+                  width={960}
+                  height={540}
+                  sizes="(max-width: 640px) 85vw, (max-width: 1024px) 65vw, 32vw"
+                  className="h-auto w-full"
+                />
               </article>
             ))}
           </div>
