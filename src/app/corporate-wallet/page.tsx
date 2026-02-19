@@ -94,8 +94,8 @@ const testimonials: Testimonial[] = [
     offering: "Corporate Payments",
     companyLogo: "/testimonials/5.png",
     companyLogoAlt: "KFintech logo",
-    companyLogoWidth: 146,
-    companyLogoHeight: 29,
+    companyLogoWidth: 118,
+    companyLogoHeight: 23,
     quote:
       "Earlier, meal reimbursements meant chasing employees for receipts, handling paperwork, and managing multiple approval layers-costing us time and productivity. With Swiggy for Work, the process is completely seamless, eliminating administrative overhead. It has streamlined our workflows and saved valuable hours for our team.",
     name: "A V Hanisha",
@@ -108,8 +108,8 @@ const testimonials: Testimonial[] = [
     offering: "Corporate Payments",
     companyLogo: "/testimonials/wework-logo.png",
     companyLogoAlt: "WeWork logo",
-    companyLogoWidth: 185,
-    companyLogoHeight: 56,
+    companyLogoWidth: 220,
+    companyLogoHeight: 66,
     quote:
       "Swiggy Corporate Payments has brought unmatched transparency and control to our meal benefits program. We can now track expenses in real-time, stay fully aligned with company budgets, and still give our employees the freedom to choose their meals. The shift has not only simplified administration but also improved employee satisfaction.",
     name: "Maria Sneha",
@@ -124,8 +124,8 @@ const testimonials: Testimonial[] = [
     offering: "Corporate Payments",
     companyLogo: "/testimonials/translumina-logo.png",
     companyLogoAlt: "Translumina logo",
-    companyLogoWidth: 166,
-    companyLogoHeight: 34,
+    companyLogoWidth: 132,
+    companyLogoHeight: 27,
     quote: "XX",
     name: "Maria Sneha",
     designation: "Administrator",
@@ -252,13 +252,15 @@ export default function CorporateWalletPage() {
                   <span className="inline-flex whitespace-nowrap rounded-full bg-brand-soft px-4 py-1.5 text-xs font-semibold text-brand">
                     {testimonial.offering}
                   </span>
-                  <Image
-                    src={`${assetBase}${testimonial.companyLogo}`}
-                    alt={testimonial.companyLogoAlt}
-                    width={testimonial.companyLogoWidth}
-                    height={testimonial.companyLogoHeight}
-                    className="h-auto max-h-14 w-auto object-contain"
-                  />
+                  <div className="flex min-w-0 max-w-[46%] items-start justify-end">
+                    <Image
+                      src={`${assetBase}${testimonial.companyLogo}`}
+                      alt={testimonial.companyLogoAlt}
+                      width={testimonial.companyLogoWidth}
+                      height={testimonial.companyLogoHeight}
+                      className="h-auto max-h-16 max-w-full w-auto object-contain"
+                    />
+                  </div>
                 </div>
                 <p className="mt-5 text-base leading-relaxed text-slate-800">
                   {testimonial.quote}
