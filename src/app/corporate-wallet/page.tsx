@@ -127,12 +127,12 @@ const testimonials: Testimonial[] = [
     companyLogoWidth: 112,
     companyLogoHeight: 23,
     quote:
-      "Swiggy Corporate Payments helped us bring stronger control to employee meal spends across teams. Billing is now centralized, approvals move faster, and policy compliance has improved without affecting employee flexibility.",
-    name: "Ritika Sharma",
-    designation: "Administrator",
-    company: "Translumina, Hyderabad",
+      "MyBiz Wallet on Swiggy has been a real advantage. It's made ordering food even more convenient-payments are fast, seamless, and hassle-free, with no need to switch apps or re-enter details. The best part is that the corporate wallet balance updates instantly. I also receive invoices and MIS reports on time, exactly as needed. Overall, it's been a smooth and reliable experience.",
+    name: "Bhoomika",
+    designation: "Assistant Manager, Admin",
+    company: "Translumina",
     headshot: "/testimonials/person-3.svg",
-    headshotAlt: "Translumina administrator",
+    headshotAlt: "Bhoomika",
   },
 ];
 
@@ -145,7 +145,7 @@ export default function CorporateWalletPage() {
     <div className="px-6 py-14">
       <section className="mx-auto w-full max-w-6xl space-y-10">
         <BackToHomeButton />
-        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
           <div className="space-y-5 text-white">
             <h1 className="text-4xl font-semibold text-white sm:text-5xl">
               Corporate Payment Solution
