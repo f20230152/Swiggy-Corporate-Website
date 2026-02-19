@@ -280,7 +280,7 @@ export default function Home() {
             {testimonials.map((testimonial) => (
                 <article
                   key={`${testimonial.name}-${testimonial.companyLogo}`}
-                  className="snap-start rounded-3xl border border-white/60 bg-white p-6 shadow-soft md:p-7"
+                  className="snap-start flex h-full flex-col rounded-3xl border border-white/60 bg-white p-6 shadow-soft md:p-7"
                 >
                   <div className="flex items-center gap-3">
                     <span className="inline-flex whitespace-nowrap rounded-full bg-brand-soft px-4 py-1.5 text-xs font-semibold text-brand">
@@ -296,7 +296,7 @@ export default function Home() {
                       />
                     </div>
                   </div>
-                  <p className="mt-5 text-base leading-relaxed text-slate-800">
+                  <p className="mt-5 flex-1 text-base leading-relaxed text-slate-800">
                     {testimonial.quote}
                   </p>
                   <div className="mt-6 flex items-end justify-between gap-4">
