@@ -84,8 +84,8 @@ const testimonials: Testimonial[] = [
     offering: "Corporate Payments",
     companyLogo: "/testimonials/5.png",
     companyLogoAlt: "KFintech logo",
-    companyLogoWidth: 118,
-    companyLogoHeight: 23,
+    companyLogoWidth: 100,
+    companyLogoHeight: 20,
     quote:
       "Earlier, meal reimbursements meant chasing employees for receipts, handling paperwork, and managing multiple approval layers-costing us time and productivity. With Swiggy for Work, the process is completely seamless, eliminating administrative overhead. It has streamlined our workflows and saved valuable hours for our team.",
     name: "A V Hanisha",
@@ -98,8 +98,8 @@ const testimonials: Testimonial[] = [
     offering: "Corporate Payments",
     companyLogo: "/testimonials/wework-logo.png",
     companyLogoAlt: "WeWork logo",
-    companyLogoWidth: 220,
-    companyLogoHeight: 66,
+    companyLogoWidth: 240,
+    companyLogoHeight: 72,
     quote:
       "Swiggy Corporate Payments has brought unmatched transparency and control to our meal benefits program. We can now track expenses in real-time, stay fully aligned with company budgets, and still give our employees the freedom to choose their meals. The shift has not only simplified administration but also improved employee satisfaction.",
     name: "Maria Sneha",
@@ -114,12 +114,15 @@ const testimonials: Testimonial[] = [
     offering: "Corporate Payments",
     companyLogo: "/testimonials/translumina-logo.png",
     companyLogoAlt: "Translumina logo",
-    companyLogoWidth: 132,
-    companyLogoHeight: 27,
-    quote: "XX",
-    name: "Maria Sneha",
+    companyLogoWidth: 112,
+    companyLogoHeight: 23,
+    quote:
+      "Swiggy Corporate Payments helped us bring stronger control to employee meal spends across teams. Billing is now centralized, approvals move faster, and policy compliance has improved without affecting employee flexibility.",
+    name: "Ritika Sharma",
     designation: "Administrator",
-    company: "Wework, Hyderabad",
+    company: "Translumina, Hyderabad",
+    headshot: "/testimonials/person-3.svg",
+    headshotAlt: "Translumina administrator",
   },
 ];
 
@@ -268,7 +271,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="testimonials" className="bg-brand px-6 py-14">
+      <section id="testimonials" className="px-6 py-14">
         <div className="mx-auto w-full max-w-6xl space-y-8">
           <div className="flex items-center justify-between">
             <h2 className="text-3xl font-bold text-white">Customer Cheers</h2>
@@ -277,23 +280,23 @@ export default function Home() {
             {testimonials.map((testimonial) => (
                 <article
                   key={`${testimonial.name}-${testimonial.companyLogo}`}
-                  className="snap-start rounded-3xl border border-white/60 bg-white p-6 shadow-soft md:p-7"
+                  className="snap-start flex min-h-[680px] flex-col rounded-3xl border border-white/60 bg-white p-6 shadow-soft md:p-7"
                 >
-                  <div className="flex items-start justify-between gap-3">
+                  <div className="flex items-center gap-3">
                     <span className="inline-flex whitespace-nowrap rounded-full bg-brand-soft px-4 py-1.5 text-xs font-semibold text-brand">
                       {testimonial.offering}
                     </span>
-                    <div className="flex min-w-0 max-w-[46%] items-start justify-end">
+                    <div className="flex h-12 min-w-0 flex-1 items-center justify-center overflow-hidden">
                       <Image
                         src={`${assetBase}${testimonial.companyLogo}`}
                         alt={testimonial.companyLogoAlt}
                         width={testimonial.companyLogoWidth}
                         height={testimonial.companyLogoHeight}
-                        className="h-auto max-h-16 max-w-full w-auto object-contain"
+                        className="h-auto max-h-16 w-auto max-w-full object-contain"
                       />
                     </div>
                   </div>
-                  <p className="mt-5 text-base leading-relaxed text-slate-800">
+                  <p className="mt-5 flex-1 text-base leading-relaxed text-slate-800">
                     {testimonial.quote}
                   </p>
                   <div className="mt-6 flex items-end justify-between gap-4">
