@@ -74,7 +74,21 @@ const useCaseColumns = [
   },
 ];
 
-const testimonials = [
+type Testimonial = {
+  offering: string;
+  companyLogo: string;
+  companyLogoAlt: string;
+  companyLogoWidth: number;
+  companyLogoHeight: number;
+  quote: string;
+  name: string;
+  designation: string;
+  company: string;
+  headshot?: string;
+  headshotAlt?: string;
+};
+
+const testimonials: Testimonial[] = [
   {
     offering: "Corporate Payments",
     companyLogo: "/testimonials/5.png",
