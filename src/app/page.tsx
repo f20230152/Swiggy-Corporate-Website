@@ -64,24 +64,62 @@ const whySwiggy: Array<{
   },
 ];
 
-const testimonials = [
+type Testimonial = {
+  offering: string;
+  companyLogo: string;
+  companyLogoAlt: string;
+  companyLogoWidth: number;
+  companyLogoHeight: number;
+  quote: string;
+  name: string;
+  designation: string;
+  company: string;
+  headshot?: string;
+  headshotAlt?: string;
+  headshotClassName?: string;
+};
+
+const testimonials: Testimonial[] = [
   {
     offering: "Corporate Payments",
-    quote:
-      "Secure access through domain whitelisting helped us run travel and food spend under bill-to-company with stronger compliance and less manual work.",
-    name: "A V Hanisha",
-    designation: "Admin",
-    company: "KFintech",
     companyLogo: "/testimonials/5.png",
+    companyLogoAlt: "KFintech logo",
+    companyLogoWidth: 146,
+    companyLogoHeight: 29,
+    quote:
+      "Earlier, meal reimbursements meant chasing employees for receipts, handling paperwork, and managing multiple approval layers-costing us time and productivity. With Swiggy for Work, the process is completely seamless, eliminating administrative overhead. It has streamlined our workflows and saved valuable hours for our team.",
+    name: "A V Hanisha",
+    designation: "Facility Manager",
+    company: "KFintech, Hyderabad",
+    headshot: "/testimonials/av-hanisha.png",
+    headshotAlt: "A V Hanisha",
   },
   {
     offering: "Corporate Payments",
+    companyLogo: "/testimonials/wework-logo.png",
+    companyLogoAlt: "WeWork logo",
+    companyLogoWidth: 185,
+    companyLogoHeight: 56,
     quote:
-      "The overall experience has been smooth and efficient, giving employees and finance teams better visibility, control, and time savings on approvals.",
+      "Swiggy Corporate Payments has brought unmatched transparency and control to our meal benefits program. We can now track expenses in real-time, stay fully aligned with company budgets, and still give our employees the freedom to choose their meals. The shift has not only simplified administration but also improved employee satisfaction.",
     name: "Maria Sneha",
-    designation: "Admin",
-    company: "WeWork",
-    companyLogo: "/testimonials/6.png",
+    designation: "Administrator",
+    company: "Wework, Hyderabad",
+    headshot: "/testimonials/maria-sneha.png",
+    headshotAlt: "Maria Sneha",
+    headshotClassName:
+      "h-[104px] w-[104px] shrink-0 rounded-2xl object-contain object-top",
+  },
+  {
+    offering: "Corporate Payments",
+    companyLogo: "/testimonials/translumina-logo.png",
+    companyLogoAlt: "Translumina logo",
+    companyLogoWidth: 166,
+    companyLogoHeight: 34,
+    quote: "XX",
+    name: "Maria Sneha",
+    designation: "Administrator",
+    company: "Wework, Hyderabad",
   },
 ];
 
@@ -235,41 +273,45 @@ export default function Home() {
           <div className="flex items-center justify-between">
             <h2 className="text-3xl font-bold text-white">Customer Cheers</h2>
           </div>
-          <div className="grid snap-x snap-mandatory grid-flow-col auto-cols-[85%] gap-6 overflow-x-auto pb-4 pt-2 sm:auto-cols-[65%] md:auto-cols-[50%] lg:auto-cols-[calc((100%-3rem)/3)]">
+          <div className="grid snap-x snap-mandatory grid-flow-col auto-cols-[92%] gap-6 overflow-x-auto pb-4 pt-2 sm:auto-cols-[78%] md:auto-cols-[58%] lg:auto-cols-[calc((100%-3rem)/3)]">
             {testimonials.map((testimonial) => (
                 <article
-                  key={testimonial.name}
-                  className="snap-start rounded-3xl border border-white/60 bg-white p-6"
+                  key={`${testimonial.name}-${testimonial.companyLogo}`}
+                  className="snap-start rounded-3xl border border-white/60 bg-white p-6 shadow-soft md:p-7"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <span className="inline-flex whitespace-nowrap rounded-full bg-brand-soft px-4 py-1.5 text-xs font-semibold text-brand">
                       {testimonial.offering}
                     </span>
-                    <div className="flex items-center justify-end">
-                      <Image
-                        src={`${assetBase}${testimonial.companyLogo}`}
-                        alt={`${testimonial.company} logo`}
-                        width={77}
-                        height={34}
-                        className="h-[34px] w-auto object-contain"
-                      />
-                    </div>
+                    <Image
+                      src={`${assetBase}${testimonial.companyLogo}`}
+                      alt={testimonial.companyLogoAlt}
+                      width={testimonial.companyLogoWidth}
+                      height={testimonial.companyLogoHeight}
+                      className="h-auto max-h-14 w-auto object-contain"
+                    />
                   </div>
-                  <div className="mt-4">
-                    <div>
-                      <p className="text-sm text-slate-700">
-                        &ldquo;{testimonial.quote}&rdquo;
-                      </p>
-                      <div className="mt-6 text-sm">
-                        <p className="font-semibold text-ink">
-                          {testimonial.name}
-                        </p>
-                        <p className="text-slate-500">
-                          {testimonial.designation}
-                        </p>
-                        <p className="text-slate-500">{testimonial.company}</p>
-                      </div>
+                  <p className="mt-5 text-base leading-relaxed text-slate-800">
+                    {testimonial.quote}
+                  </p>
+                  <div className="mt-6 flex items-end justify-between gap-4">
+                    <div className="text-base">
+                      <p className="font-bold text-ink">{testimonial.name}</p>
+                      <p className="text-slate-700">{testimonial.designation}</p>
+                      <p className="text-slate-700">{testimonial.company}</p>
                     </div>
+                    {testimonial.headshot ? (
+                      <Image
+                        src={`${assetBase}${testimonial.headshot}`}
+                        alt={testimonial.headshotAlt ?? testimonial.name}
+                        width={110}
+                        height={110}
+                        className={
+                          testimonial.headshotClassName ??
+                          "h-[92px] w-[92px] shrink-0 rounded-2xl object-cover"
+                        }
+                      />
+                    ) : null}
                   </div>
                 </article>
             ))}

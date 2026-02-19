@@ -86,6 +86,7 @@ type Testimonial = {
   company: string;
   headshot?: string;
   headshotAlt?: string;
+  headshotClassName?: string;
 };
 
 const testimonials: Testimonial[] = [
@@ -93,8 +94,8 @@ const testimonials: Testimonial[] = [
     offering: "Corporate Payments",
     companyLogo: "/testimonials/5.png",
     companyLogoAlt: "KFintech logo",
-    companyLogoWidth: 182,
-    companyLogoHeight: 36,
+    companyLogoWidth: 146,
+    companyLogoHeight: 29,
     quote:
       "Earlier, meal reimbursements meant chasing employees for receipts, handling paperwork, and managing multiple approval layers-costing us time and productivity. With Swiggy for Work, the process is completely seamless, eliminating administrative overhead. It has streamlined our workflows and saved valuable hours for our team.",
     name: "A V Hanisha",
@@ -107,8 +108,8 @@ const testimonials: Testimonial[] = [
     offering: "Corporate Payments",
     companyLogo: "/testimonials/wework-logo.png",
     companyLogoAlt: "WeWork logo",
-    companyLogoWidth: 132,
-    companyLogoHeight: 40,
+    companyLogoWidth: 185,
+    companyLogoHeight: 56,
     quote:
       "Swiggy Corporate Payments has brought unmatched transparency and control to our meal benefits program. We can now track expenses in real-time, stay fully aligned with company budgets, and still give our employees the freedom to choose their meals. The shift has not only simplified administration but also improved employee satisfaction.",
     name: "Maria Sneha",
@@ -116,13 +117,15 @@ const testimonials: Testimonial[] = [
     company: "Wework, Hyderabad",
     headshot: "/testimonials/maria-sneha.png",
     headshotAlt: "Maria Sneha",
+    headshotClassName:
+      "h-[104px] w-[104px] shrink-0 rounded-2xl object-contain object-top",
   },
   {
     offering: "Corporate Payments",
     companyLogo: "/testimonials/translumina-logo.png",
     companyLogoAlt: "Translumina logo",
-    companyLogoWidth: 208,
-    companyLogoHeight: 42,
+    companyLogoWidth: 166,
+    companyLogoHeight: 34,
     quote: "XX",
     name: "Maria Sneha",
     designation: "Administrator",
@@ -254,7 +257,7 @@ export default function CorporateWalletPage() {
                     alt={testimonial.companyLogoAlt}
                     width={testimonial.companyLogoWidth}
                     height={testimonial.companyLogoHeight}
-                    className="h-auto max-h-10 w-auto object-contain"
+                    className="h-auto max-h-14 w-auto object-contain"
                   />
                 </div>
                 <p className="mt-5 text-base leading-relaxed text-slate-800">
@@ -272,7 +275,10 @@ export default function CorporateWalletPage() {
                       alt={testimonial.headshotAlt ?? testimonial.name}
                       width={110}
                       height={110}
-                      className="h-[92px] w-[92px] shrink-0 rounded-2xl object-cover"
+                      className={
+                        testimonial.headshotClassName ??
+                        "h-[92px] w-[92px] shrink-0 rounded-2xl object-cover"
+                      }
                     />
                   ) : null}
                 </div>
