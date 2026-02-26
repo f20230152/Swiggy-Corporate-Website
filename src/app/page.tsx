@@ -16,6 +16,7 @@ const solutions = [
       "Eliminate reimbursements with a digital-first corporate payment solution.",
     href: "/corporate-wallet",
     icon: WalletIcon,
+    showExploreOfferingCta: true,
   },
   {
     title: "Corporate Rewards",
@@ -23,12 +24,14 @@ const solutions = [
       "Get access to exclusive corporate rewards on Food, Instamart, Dineout and more.",
     href: "/corporate-rewards",
     icon: RewardsIcon,
+    showExploreOfferingCta: false,
   },
   {
     title: "Gift Cards",
     description: "Reward great work with Swiggy Gift Cards.",
     href: "/gift-cards",
     icon: GiftIcon,
+    showExploreOfferingCta: false,
   },
   {
     title: "Concierge-Led Food & Dining",
@@ -36,6 +39,7 @@ const solutions = [
       "Hassle-free bulk food delivery and seamless restaurant bookings for team outings.",
     href: "/concierge-led-food-dining",
     icon: ConciergeIcon,
+    showExploreOfferingCta: false,
   },
 ];
 
@@ -223,10 +227,12 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-                  <div className="mt-auto flex items-center gap-2 pt-6 text-sm font-semibold text-ink">
-                    Explore offering
-                    <ChevronRight className="h-4 w-4 text-brand" />
-                  </div>
+                  {solution.showExploreOfferingCta ? (
+                    <div className="mt-auto flex items-center gap-2 pt-6 text-sm font-semibold text-ink">
+                      Explore offering
+                      <ChevronRight className="h-4 w-4 text-brand" />
+                    </div>
+                  ) : null}
                 </Link>
               );
             })}
