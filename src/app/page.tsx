@@ -11,9 +11,9 @@ import {
 
 const solutions = [
   {
-    title: "Corporate Payment Solution",
+    title: "Bill to Company",
     description:
-      "Eliminate reimbursements with a digital-first corporate payment solution.",
+      "Eliminate reimbursements with a streamlined bill-to-company workflow.",
     href: "/corporate-wallet",
     icon: WalletIcon,
     showExploreOfferingCta: true,
@@ -51,7 +51,7 @@ const whySwiggy: Array<{
   {
     title: "Long Standing Expertise",
     description:
-      "10+ years pioneering food delivery - a trusted, category-defining brand embedded in daily Indian life.",
+      "10+ years pioneering food delivery and dining out - a trusted, category-defining brand embedded in daily Indian life.",
     imageSrc: "/why-swiggy/1.png",
   },
   {
@@ -85,37 +85,23 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
   {
-    offering: "Corporate Payments",
-    companyLogo: "/testimonials/5.png",
-    companyLogoAlt: "KFintech logo",
-    companyLogoWidth: 100,
-    companyLogoHeight: 20,
-    quote:
-      "Earlier, meal reimbursements meant chasing employees for receipts, handling paperwork, and managing multiple approval layers-costing us time and productivity. With Swiggy for Work, the process is completely seamless, eliminating administrative overhead. It has streamlined our workflows and saved valuable hours for our team.",
-    name: "A V Hanisha",
-    designation: "Facility Manager",
-    company: "KFintech, Hyderabad",
-    headshot: "/testimonials/av-hanisha.png",
-    headshotAlt: "A V Hanisha",
-  },
-  {
-    offering: "Corporate Payments",
+    offering: "Bill to Company",
     companyLogo: "/testimonials/wework-logo.png",
     companyLogoAlt: "WeWork logo",
     companyLogoWidth: 240,
     companyLogoHeight: 72,
     quote:
-      "Swiggy Corporate Payments has brought unmatched transparency and control to our meal benefits program. We can now track expenses in real-time, stay fully aligned with company budgets, and still give our employees the freedom to choose their meals. The shift has not only simplified administration but also improved employee satisfaction.",
+      "Swiggy's Bill to Company solution has brought unmatched transparency and control to our meal benefits. We now track expenses in real-time, stay fully aligned with budgets, and still give our employees the freedom to choose their meals. The shift has not only simplified admin but improved employee satisfaction.",
     name: "Maria Sneha",
     designation: "Administrator",
-    company: "Wework, Hyderabad",
+    company: "WeWork, Hyderabad",
     headshot: "/testimonials/maria-sneha.png",
     headshotAlt: "Maria Sneha",
     headshotClassName:
       "h-[104px] w-[104px] shrink-0 rounded-2xl object-contain object-top",
   },
   {
-    offering: "Corporate Payments",
+    offering: "Bill to Company",
     companyLogo: "/testimonials/translumina-logo.png",
     companyLogoAlt: "Translumina logo",
     companyLogoWidth: 112,
@@ -127,6 +113,20 @@ const testimonials: Testimonial[] = [
     company: "Translumina",
     headshot: "/testimonials/person-3.svg",
     headshotAlt: "Bhoomika",
+  },
+  {
+    offering: "Bill to Company",
+    companyLogo: "/testimonials/5.png",
+    companyLogoAlt: "KFintech logo",
+    companyLogoWidth: 100,
+    companyLogoHeight: 20,
+    quote:
+      "Earlier, meal reimbursements meant chasing employees for receipts, handling paperwork, and managing multiple approval layers-costing us time and productivity. With Swiggy for Work, the process is completely seamless, eliminating administrative overhead. It has streamlined our workflows and saved valuable hours for our team.",
+    name: "A V Hanisha",
+    designation: "Facility Manager",
+    company: "KFintech, Hyderabad",
+    headshot: "/testimonials/av-hanisha.png",
+    headshotAlt: "A V Hanisha",
   },
 ];
 
@@ -196,13 +196,13 @@ export default function Home() {
         <div className="mx-auto w-full max-w-6xl space-y-8">
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <h2 className="text-3xl font-bold text-white">
-              Key Service Offerings
+              Solutions
             </h2>
             <Link
               href="/#contact"
               className="inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/30"
             >
-              Talk to an expert <ChevronRight className="h-4 w-4" />
+              Get in Touch <ChevronRight className="h-4 w-4" />
             </Link>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
@@ -229,7 +229,7 @@ export default function Home() {
                   </div>
                   {solution.showExploreOfferingCta ? (
                     <div className="mt-auto flex items-center gap-2 pt-6 text-sm font-semibold text-ink">
-                      Explore offering
+                      Explore solution
                       <ChevronRight className="h-4 w-4 text-brand" />
                     </div>
                   ) : null}
@@ -340,7 +340,7 @@ export default function Home() {
               <h2 className="text-3xl font-semibold text-ink">Talk to our team</h2>
               <p className="text-slate-700">
                 Looking for more info? Share your details and our team will get
-                in touch.
+                in touch with relevant details within 24 working hours.
               </p>
             </div>
             <form className="grid gap-4 text-sm text-ink">
@@ -396,14 +396,14 @@ export default function Home() {
               </div>
               <fieldset className="flex flex-col gap-3">
                 <legend className="font-semibold text-ink">
-                  Offering that interests you
+                  Solution that interests you
                 </legend>
                 <div className="grid gap-2 sm:grid-cols-2">
                   {[
-                    "Corporate Payment Solution",
+                    "Bill to Company",
                     "Corporate Rewards",
-                    "Concierge-Led Food & Dining",
                     "Gift Cards",
+                    "Concierge-Led Food & Dining",
                   ].map((offering) => (
                     <label
                       key={offering}

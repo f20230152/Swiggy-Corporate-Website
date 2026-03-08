@@ -12,7 +12,7 @@ import {
 } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Corporate Payment Solution",
+  title: "Bill to Company",
   description:
     "Digitize corporate meal and travel expenses with a bill-to-company workflow and myBiz integration.",
 };
@@ -91,37 +91,23 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
   {
-    offering: "Corporate Payments",
-    companyLogo: "/testimonials/5.png",
-    companyLogoAlt: "KFintech logo",
-    companyLogoWidth: 100,
-    companyLogoHeight: 20,
-    quote:
-      "Earlier, meal reimbursements meant chasing employees for receipts, handling paperwork, and managing multiple approval layers-costing us time and productivity. With Swiggy for Work, the process is completely seamless, eliminating administrative overhead. It has streamlined our workflows and saved valuable hours for our team.",
-    name: "A V Hanisha",
-    designation: "Facility Manager",
-    company: "KFintech, Hyderabad",
-    headshot: "/testimonials/av-hanisha.png",
-    headshotAlt: "A V Hanisha",
-  },
-  {
-    offering: "Corporate Payments",
+    offering: "Bill to Company",
     companyLogo: "/testimonials/wework-logo.png",
     companyLogoAlt: "WeWork logo",
     companyLogoWidth: 240,
     companyLogoHeight: 72,
     quote:
-      "Swiggy Corporate Payments has brought unmatched transparency and control to our meal benefits program. We can now track expenses in real-time, stay fully aligned with company budgets, and still give our employees the freedom to choose their meals. The shift has not only simplified administration but also improved employee satisfaction.",
+      "Swiggy's Bill to Company solution has brought unmatched transparency and control to our meal benefits. We now track expenses in real-time, stay fully aligned with budgets, and still give our employees the freedom to choose their meals. The shift has not only simplified admin but improved employee satisfaction.",
     name: "Maria Sneha",
     designation: "Administrator",
-    company: "Wework, Hyderabad",
+    company: "WeWork, Hyderabad",
     headshot: "/testimonials/maria-sneha.png",
     headshotAlt: "Maria Sneha",
     headshotClassName:
       "h-[104px] w-[104px] shrink-0 rounded-2xl object-contain object-top",
   },
   {
-    offering: "Corporate Payments",
+    offering: "Bill to Company",
     companyLogo: "/testimonials/translumina-logo.png",
     companyLogoAlt: "Translumina logo",
     companyLogoWidth: 112,
@@ -133,6 +119,20 @@ const testimonials: Testimonial[] = [
     company: "Translumina",
     headshot: "/testimonials/person-3.svg",
     headshotAlt: "Bhoomika",
+  },
+  {
+    offering: "Bill to Company",
+    companyLogo: "/testimonials/5.png",
+    companyLogoAlt: "KFintech logo",
+    companyLogoWidth: 100,
+    companyLogoHeight: 20,
+    quote:
+      "Earlier, meal reimbursements meant chasing employees for receipts, handling paperwork, and managing multiple approval layers-costing us time and productivity. With Swiggy for Work, the process is completely seamless, eliminating administrative overhead. It has streamlined our workflows and saved valuable hours for our team.",
+    name: "A V Hanisha",
+    designation: "Facility Manager",
+    company: "KFintech, Hyderabad",
+    headshot: "/testimonials/av-hanisha.png",
+    headshotAlt: "A V Hanisha",
   },
 ];
 
@@ -148,7 +148,7 @@ export default function CorporateWalletPage() {
           <div className="space-y-5 text-white">
             <BackToHomeButton />
             <h1 className="text-4xl font-semibold text-white sm:text-5xl">
-              Corporate Payment Solution
+              Bill to Company
             </h1>
             <p className="text-lg text-white/85">
               Eliminating reimbursements, enhancing efficiency. Transform how
@@ -171,7 +171,7 @@ export default function CorporateWalletPage() {
             <div className="w-[82%] min-w-[320px] max-w-[460px] overflow-hidden rounded-3xl border border-white/25 bg-white/10 shadow-soft">
               <Image
                 src={`${assetBase}/corporate-hero-banner.jpeg?v=20260216-2232`}
-                alt="Corporate Payment Solution hero"
+                alt="Bill to Company hero"
                 width={1400}
                 height={900}
                 priority

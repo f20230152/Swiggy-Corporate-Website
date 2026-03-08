@@ -2,10 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const footerLinks = [
-  { label: "Corporate Payment Solution", href: "/corporate-wallet" },
+  { label: "Bill to Company", href: "/corporate-wallet" },
   { label: "Corporate Rewards", href: "/corporate-rewards" },
-  { label: "Concierge Dining", href: "/concierge-led-food-dining" },
   { label: "Gift Cards", href: "/gift-cards" },
+  { label: "Concierge Dining", href: "/concierge-led-food-dining" },
 ];
 
 const assetBase = process.env.NEXT_PUBLIC_BASE_PATH
@@ -16,7 +16,7 @@ export default function SiteFooter() {
   return (
     <footer className="border-t border-black/5 bg-white">
       <div className="mx-auto w-full max-w-6xl px-6 py-12">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
+        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr]">
           <div className="space-y-4">
             <div className="flex items-center gap-3 text-lg font-semibold text-ink">
               <Image
@@ -49,13 +49,6 @@ export default function SiteFooter() {
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="space-y-3 text-sm">
-            <p className="font-semibold text-ink">Get Started</p>
-            <p className="text-slate-500">
-              Tell us about your team size and requirements. We&apos;ll craft a
-              bespoke program within 24 hours.
-            </p>
           </div>
         </div>
         <div className="mt-10 flex flex-wrap items-center justify-between gap-3 border-t border-black/5 pt-6 text-xs text-slate-500">

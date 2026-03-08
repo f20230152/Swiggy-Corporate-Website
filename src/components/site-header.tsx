@@ -23,16 +23,16 @@ export default function SiteHeader() {
         </Link>
         <div className="flex items-center gap-3">
           <Link
-            href="/#contact"
-            className="rounded-full border border-brand px-4 py-2 text-sm font-semibold text-brand transition hover:bg-[var(--brand)] hover:text-white"
-          >
-            Get in Touch
-          </Link>
-          <Link
             href="/#solutions"
-            className="hidden rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white transition hover:bg-black md:inline-flex"
+            className="rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white transition hover:bg-black"
           >
             Explore Solutions
+          </Link>
+          <Link
+            href="/#contact"
+            className="rounded-full border border-black bg-black px-4 py-2 text-sm font-semibold text-white transition hover:bg-[var(--ink)]"
+          >
+            Get in Touch
           </Link>
         </div>
       </div>
