@@ -111,8 +111,10 @@ const testimonials: Testimonial[] = [
     name: "Bhoomika",
     designation: "Assistant Manager, Admin",
     company: "Translumina",
-    headshot: "/testimonials/person-3.svg",
+    headshot: "/testimonials/translumina-bhoomika.jpeg",
     headshotAlt: "Bhoomika",
+    headshotClassName:
+      "h-[92px] w-[92px] shrink-0 rounded-2xl object-cover object-top",
   },
   {
     offering: "Bill to Company",
