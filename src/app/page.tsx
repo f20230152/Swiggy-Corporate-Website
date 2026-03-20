@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
+import ContactForm from "@/components/contact-form";
 import {
   ChevronRight,
   ConciergeIcon,
@@ -345,90 +346,7 @@ export default function Home() {
                 in touch with relevant details within 24 working hours.
               </p>
             </div>
-            <form className="grid gap-4 text-sm text-ink">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="flex flex-col gap-2">
-                  <label className="font-semibold text-ink" htmlFor="name">
-                    Your Name
-                  </label>
-                  <input
-                    id="name"
-                    name="name"
-                    placeholder="Your full name"
-                    className="rounded-2xl border border-black/10 bg-white px-4 py-3 text-ink placeholder:text-slate-400"
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label className="font-semibold text-ink" htmlFor="designation">
-                    Designation
-                  </label>
-                  <input
-                    id="designation"
-                    name="designation"
-                    placeholder="Your role"
-                    className="rounded-2xl border border-black/10 bg-white px-4 py-3 text-ink placeholder:text-slate-400"
-                  />
-                </div>
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="flex flex-col gap-2">
-                  <label className="font-semibold text-ink" htmlFor="email">
-                    Email
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="name@company.com"
-                    className="rounded-2xl border border-black/10 bg-white px-4 py-3 text-ink placeholder:text-slate-400"
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label className="font-semibold text-ink" htmlFor="phone">
-                    Mobile Number
-                  </label>
-                  <input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    placeholder="+91 00000 00000"
-                    className="rounded-2xl border border-black/10 bg-white px-4 py-3 text-ink placeholder:text-slate-400"
-                  />
-                </div>
-              </div>
-              <fieldset className="flex flex-col gap-3">
-                <legend className="font-semibold text-ink">
-                  Solution that interests you
-                </legend>
-                <div className="grid gap-2 sm:grid-cols-2">
-                  {[
-                    "Bill to Company",
-                    "Corporate Rewards",
-                    "Gift Cards",
-                    "Concierge-Led Food & Dining",
-                  ].map((offering) => (
-                    <label
-                      key={offering}
-                      className="flex items-center gap-2 rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm text-ink"
-                    >
-                      <input
-                        type="checkbox"
-                        name="offering"
-                        value={offering}
-                        className="h-4 w-4 accent-brand"
-                      />
-                      <span>{offering}</span>
-                    </label>
-                  ))}
-                </div>
-              </fieldset>
-              <button
-                type="submit"
-                className="mt-2 inline-flex items-center justify-center rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:bg-black"
-              >
-                Submit
-              </button>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </section>
